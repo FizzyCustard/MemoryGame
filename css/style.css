@@ -38,10 +38,10 @@ h1 {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 23px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border: 0;
-    background: url("../img/oval.png");
+    background: url("../img/troll.png");
     cursor: pointer;
 }
 
@@ -78,9 +78,24 @@ h1 {
 .square-down {
 	/*background-color: grey;*/
 	background-color: #D19987;
+	position: relative;
+ 	top: 0;
+  	left: 0;
 }
 
 .slider {
 	width: 600px;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
