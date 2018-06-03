@@ -9,38 +9,57 @@ const eachRow = document.getElementById("table-square");
 //When a use clicks then this calls the desired function
 
 eachRow.addEventListener('click', showCard);
-
+var imageClicked ;
+var previousClicked;
+var imageClicked;
 
 function showCard(event) {
 	const clickedImage = event.target.src;
 	const theImage = clickedImage.endsWith("square.png");
-	const classClicked = event.target.className
-	console.log(clickedImage)
-	console.log(classClicked);
+	imageClicked = event.target.className
+	
 	if (theImage === true) {
-		imageShower(clickedImage, classClicked);
-	} else {
-		event.target.src = "img/square.png";	
+		imageShower(clickedImage, imageClicked);
+		} else {
+		event.target.src = "img/square.png";
 	}
+	compareImage();
+	console.log(previousClicked);
 	
 }
 
+
+function compareImage() {
+	if (previousClicked == undefined) {
+		console.log("Nothing previous");
+		previousClicked = imageClicked;
+		console.log(previousClicked);
+	} else if (previousClicked == imageClicked) {
+		console.log("Hooray!!")
+		previousClicked = undefined
+	} else console.log("boooooo!!")
+
+}
+
+
+
+
 // This function below takes 2 arguments from the showCard function and then shows and hides the image that are clicked on.
 
-function imageShower(clickedImage, classClicked) {
-	if (classClicked == "image-one square-down") {
+function imageShower(clickedImage, imageClicked) {
+	if (imageClicked == "image-one square-down") {
 			event.target.src = "img/icons/one.png";
-		} else if (classClicked == "image-two square-down") {
+		} else if (imageClicked == "image-two square-down") {
 			event.target.src = "img/icons/two.png";
-		}else if (classClicked == "image-three square-down") {
+		}else if (imageClicked == "image-three square-down") {
 			event.target.src = "img/icons/three.png";
-		}else if (classClicked == "image-four square-down") {
+		}else if (imageClicked == "image-four square-down") {
 			event.target.src = "img/icons/four.png";
-		}else if (classClicked == "image-five square-down") {
+		}else if (imageClicked == "image-five square-down") {
 			event.target.src = "img/icons/five.png";
-		}else if (classClicked == "image-six square-down") {
+		}else if (imageClicked == "image-six square-down") {
 			event.target.src = "img/icons/six.png";
-		}else if (classClicked == "image-seven square-down") {
+		}else if (imageClicked == "image-seven square-down") {
 			event.target.src = "img/icons/seven.png";
 		}else event.target.src = "img/icons/eight.png";
 }
@@ -59,16 +78,16 @@ slider.oninput = function() {
     slider.innerHTML = this.value;
     theValue = this.value
     var cubeColor = document.getElementsByClassName("square-down")
-    if (theValue == 2) {
+    if (theValue == 1) {
     	// console.log("less");
     	var i;
     	for (i = 0; i < cubeColor.length; i++) {
-    		cubeColor[i].style.backgroundColor = "#D1CE87";
+    		cubeColor[i].style.backgroundColor = "#ffffff";
 		}
-    } else if (theValue == 1){
+    } else if (theValue == 2){
     	// console.log("more");
     	for (i = 0; i < cubeColor.length; i++) {
-    		cubeColor[i].style.backgroundColor = "#D19987";
+    		cubeColor[i].style.backgroundColor = "#D1CE87";
 		}
     } else if (theValue == 3){
     	for (i = 0; i < cubeColor.length; i++) {
