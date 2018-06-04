@@ -4,14 +4,15 @@
 
 const eachCube = document.getElementsByClassName("square-down") ;
 const eachRow = document.getElementById("table-square");
-
+const trackScore = document.getElementById("userScore")
 
 //When a use clicks then this calls the desired function
 
 eachRow.addEventListener('click', showCard);
 var imageClicked ;
-var previousClicked;
+var previousClicked = null;
 var imageClicked;
+var score = 0
 
 function showCard(event) {
 	const clickedImage = event.target.src;
@@ -24,23 +25,32 @@ function showCard(event) {
 		event.target.src = "img/square.png";
 	}
 	compareImage();
-	console.log(previousClicked);
-	
+
 }
 
+// This function compares the previously clicked image and 
+// compares it to the one just clicked to see if they match
 
 function compareImage() {
 	if (previousClicked == undefined) {
 		console.log("Nothing previous");
-		previousClicked = imageClicked;
-		console.log(previousClicked);
 	} else if (previousClicked == imageClicked) {
-		console.log("Hooray!!")
-		previousClicked = undefined
-	} else console.log("boooooo!!")
+		console.log("Hooray!!");
+		score = score + 1;
+		trackScore.innerHTML = score;
+		previousClicked = undefined ;
+		imageClicked = undefined ;
+	} else console.log("boooooo!!") ;
+		previousClicked = undefined ;
+		imageClicked = undefined ;
+
 
 }
 
+
+function scoreTracker() {
+
+}
 
 
 
