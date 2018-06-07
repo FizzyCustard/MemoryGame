@@ -5,19 +5,12 @@
 const eachCube = document.getElementsByClassName("square-down") ;
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
-//gets button to call resetGame Function
-// document.getElementById("resetGame").onclick = gameReset();
-
-//When a use clicks then this calls the desired function
 
 eachRow.addEventListener('click', showCard);
-var imageClicked ;
 var previousClicked = undefined;
 var imageClicked = undefined;
 var score = 0
-var clickedImage = undefined;
 var theImage;
-var historicImage = undefined;
 var clickTarget;
 var previousClickedEvent;
 var flippedCards = [];
@@ -68,22 +61,34 @@ function imageShower(imageClicked) {
 
 function compareImage() {
 	if (previousClicked == undefined) {
-		console.log("Nothing previous");;
+		console.log("Nothing previous");
 		previousClicked = imageClicked;
 	} else if (previousClicked == imageClicked) {
 		console.log("Hooray!!");
 		addPoint();
-		clearClicked();
 	} else if (previousClicked != imageClicked) {
 		console.log("boooooo!!") ;
-		historicImage = previousClicked
+		userMistake();
+	} else console.log("ERROR");
+		
+}
+
+//Function runs when a user clicks 2 wrong cards
+function userMistake() {
 		turnReset();
 		clearClicked();
 		removeLastFlipped();
 		addPoint();
-	} else console.log("ERROR");
-		
 }
+
+//FOR WHEN THE USER SELECTS 2 CORRENT CARDS
+function addPoint() {
+	score = score + 1;
+	trackScore.innerHTML = score;
+	clearClicked();
+
+}
+
 
 //MAKES A PREVIOUS CLICKED AND CURRENT CLICKED CARDS TURN BACK OVER
 function turnReset() {
@@ -92,12 +97,6 @@ function turnReset() {
 	
 }
 
-//ADDS A POINT TO THE SCORE TRACKER
-function addPoint() {
-	score = score + 1;
-	trackScore.innerHTML = score;
-
-}
 
 //THIS CLEARS THE VARAIBLES USED AFTER EACH MOVE OF 2
 function clearClicked() {
@@ -120,8 +119,6 @@ function gameReset() {
 	}
 	score = 0;
 	trackScore.innerHTML = score;
-	// flippedCards.forEach() 
-	// 	clickTarget.target.src = "img/square.png";
 }
 
 
@@ -144,13 +141,11 @@ slider.oninput = function() {
     slider.innerHTML = this.value;
     theValue = this.value
     if (theValue == 1) {
-    	// console.log("less");
     	var i;
     	for (i = 0; i < eachCube.length; i++) {
     		eachCube[i].style.backgroundColor = "#ffffff";
 		}
     } else if (theValue == 2){
-    	// console.log("more");
     	for (i = 0; i < eachCube.length; i++) {
     		eachCube[i].style.backgroundColor = "#D1CE87";
 		}
@@ -166,10 +161,6 @@ slider.oninput = function() {
 }
 
 //END OF SLIDER CODE
-
-
-
-var resetButton = document.getElementById("resetGame");
 
 
 

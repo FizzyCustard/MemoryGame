@@ -1,5 +1,5 @@
 body {
-	background-color: white;
+	background: #ffffff url('../img/geometry2.png');
 }
 
 h1 {
@@ -63,7 +63,7 @@ h1 {
 
 
 #table-square {
-	width: 685px;
+	width: 617px;
 	margin-left: auto;
 	margin-right: auto;
 }
