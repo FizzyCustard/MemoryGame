@@ -10,21 +10,25 @@ const trackScore = document.getElementById("userScore")
 
 eachRow.addEventListener('click', showCard);
 var imageClicked ;
-var previousClicked = null;
+var previousClicked = undefined;
 var imageClicked;
 var score = 0
+var clickedImage;
+var theImage;
 
 function showCard(event) {
-	const clickedImage = event.target.src;
-	const theImage = clickedImage.endsWith("square.png");
-	imageClicked = event.target.className
+	clickedImage = event.target.src;
+	theImage = clickedImage.endsWith("square.png");
+	imageClicked = event.target.className;
 	
 	if (theImage === true) {
 		imageShower(clickedImage, imageClicked);
+		compareImage();
 		} else {
 		event.target.src = "img/square.png";
 	}
-	compareImage();
+
+	console.log(previousClicked);
 
 }
 
@@ -33,18 +37,20 @@ function showCard(event) {
 
 function compareImage() {
 	if (previousClicked == undefined) {
-		console.log("Nothing previous");
+		console.log("Nothing previous");;
+		previousClicked = imageClicked;
 	} else if (previousClicked == imageClicked) {
 		console.log("Hooray!!");
 		score = score + 1;
 		trackScore.innerHTML = score;
 		previousClicked = undefined ;
 		imageClicked = undefined ;
-	} else console.log("boooooo!!") ;
+	} else if (previousClicked != imageClicked) {
+		console.log("boooooo!!") ;
 		previousClicked = undefined ;
 		imageClicked = undefined ;
-
-
+	} else console.log("ERROR");
+		
 }
 
 
