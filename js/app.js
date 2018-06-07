@@ -5,6 +5,8 @@
 const eachCube = document.getElementsByClassName("square-down") ;
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
+//gets button to call resetGame Function
+// document.getElementById("resetGame").onclick = gameReset();
 
 //When a use clicks then this calls the desired function
 
@@ -18,9 +20,10 @@ var theImage;
 var historicImage = undefined;
 var clickTarget;
 var previousClickedEvent;
+var flippedCards = [];
 
 function showCard(event) {
-	console.log(previousClicked);
+	flippedCards.push(event);
 	clickTarget = event;
 	clickedImage = clickTarget.target.src;
 	theImage = clickedImage.endsWith("square.png");
@@ -34,7 +37,7 @@ function showCard(event) {
 		console.log("You can not doble click image");
 	}
 	previousClickedEvent = clickTarget;
-	console.log(previousClicked);
+	winCheck();
 
 }
 
@@ -76,6 +79,7 @@ function compareImage() {
 		historicImage = previousClicked
 		turnReset();
 		clearClicked();
+		removeLastFlipped();
 		addPoint();
 	} else console.log("ERROR");
 		
@@ -101,6 +105,32 @@ function clearClicked() {
 		imageClicked = undefined ;
 }
 
+
+//REMOVES LAST 2 ITEMS FROM THE FLIPPED ARRAY
+function removeLastFlipped(){
+	flippedCards.pop();
+	flippedCards.pop();
+}
+
+
+//LOOP THAT FLIPS ALL CARDS BACK OVER TO RESET GAME
+function gameReset() {
+	for (var i = flippedCards.length - 1; i >= 0; i--) {
+		flippedCards[i].target.src = "img/square.png";
+	}
+	score = 0;
+	trackScore.innerHTML = score;
+	// flippedCards.forEach() 
+	// 	clickTarget.target.src = "img/square.png";
+}
+
+
+//FUNCTION THAT CHECKS IS THE USER HAS WON
+function winCheck() {
+	if (flippedCards.length == 16) {
+		console.log("WINNER");
+	} 
+}
 
 
 // CODE FOR THE SLIDER
