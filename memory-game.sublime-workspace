@@ -1,0 +1,655 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cons",
+				"console"
+			],
+			[
+				"pre",
+				"previousClicked"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"image",
+				"imageClicked"
+			],
+			[
+				"imag",
+				"imageClicked"
+			],
+			[
+				"cl",
+				"clickedImage"
+			],
+			[
+				"clas",
+				"classClicked"
+			],
+			[
+				"click",
+				"clickedImage"
+			],
+			[
+				"the",
+				"theImage"
+			],
+			[
+				"ad",
+				"addEventListener"
+			],
+			[
+				"each",
+				"eachRow"
+			],
+			[
+				"eac",
+				"eachCube"
+			],
+			[
+				"getElem",
+				"getElementsByClassName"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"padd",
+				"padding-bottom\tproperty"
+			],
+			[
+				"cu",
+				"cubeColor"
+			],
+			[
+				"marg",
+				"margin-right\tproperty"
+			],
+			[
+				"ali",
+				"align-items\tproperty"
+			],
+			[
+				"l",
+				"li\tTag"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"my",
+				"myNewTable"
+			],
+			[
+				"ins",
+				"insertCell"
+			],
+			[
+				"new",
+				"newElement"
+			],
+			[
+				"table",
+				"tableContent"
+			],
+			[
+				"tal",
+				"tableContent"
+			],
+			[
+				"colo",
+				"color"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"cno",
+				"console"
+			],
+			[
+				"make",
+				"makeGrid"
+			],
+			[
+				"inse",
+				"insertRow"
+			],
+			[
+				"crea",
+				"createElement"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"mar",
+				"margin-bottom\tproperty"
+			],
+			[
+				"fon",
+				"font-weight\tproperty"
+			],
+			[
+				"margi",
+				"margin-left\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"gal",
+				"gallery-section"
+			],
+			[
+				"social",
+				"social-image"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"pad",
+				"padding\tproperty"
+			],
+			[
+				"fle",
+				"flex-wrap\tproperty"
+			],
+			[
+				"margin",
+				"margin-right\tproperty"
+			],
+			[
+				"flex",
+				"flex-grow\tproperty"
+			],
+			[
+				"mi",
+				"min-width\tproperty"
+			],
+			[
+				"trans",
+				"transform\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"Ki",
+				"kitten-image"
+			],
+			[
+				"tex",
+				"text-transform\tproperty"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"border-c",
+				"border-color\tproperty"
+			],
+			[
+				"we",
+				"weekendAlarm"
+			],
+			[
+				"ala",
+				"alarm"
+			],
+			[
+				"don",
+				"donut"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"mes",
+				"messages"
+			],
+			[
+				"ar",
+				"arayOfMessage"
+			],
+			[
+				"fa",
+				"facebookProfile"
+			],
+			[
+				"remo",
+				"removeFriend"
+			],
+			[
+				"add",
+				"addFriend"
+			],
+			[
+				"int",
+				"interestRatePercent"
+			],
+			[
+				"is",
+				"isOpen"
+			],
+			[
+				"num",
+				"numbers"
+			],
+			[
+				"co",
+				"colum"
+			],
+			[
+				"c",
+				"colum"
+			],
+			[
+				"tea",
+				"teamSize"
+			],
+			[
+				"has",
+				"hasEnoughPlayers"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"sea",
+				"seatNumber"
+			],
+			[
+				"sol",
+				"solution"
+			],
+			[
+				"sou",
+				"solution"
+			],
+			[
+				"ju",
+				"JuliaJames"
+			],
+			[
+				"Julia",
+				"JuliaJames"
+			],
+			[
+				"ca",
+				"carnivore"
+			],
+			[
+				"eats",
+				"eatsPlants"
+			],
+			[
+				"eat",
+				"eatsAnimals"
+			],
+			[
+				"shirt",
+				"shirtSleeve"
+			],
+			[
+				"shir",
+				"shirtWidth"
+			],
+			[
+				"va",
+				"vanilla"
+			],
+			[
+				"bal",
+				"balance"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1821,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 1192,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 3182,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Enable Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 283.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": true,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game",
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/js"
+	],
+	"file_history":
+	[
+		"/Users/nelarifi/Dropbox/Code/Java stuff/WeatherAppStarter/index.html",
+		"/Users/nelarifi/Dropbox/Code/Java stuff/WeatherAppStarter/app.js",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end web dev/Memory-Game/fend-project-memory-game-master/index.html",
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/Template.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end web dev/Memory-Game/fend-project-memory-game-master/css/app.css",
+		"/Users/nelarifi/Dropbox/Courses/new-git-project/js/app.js",
+		"/Users/nelarifi/Dropbox/Courses/new-git-project/css/app.css",
+		"/Users/nelarifi/Dropbox/Courses/new-git-project/index.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/1 - My own testing/My profile/css/main.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/1 - My own testing/My profile/css/responsive.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Start L5/main.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Start L5/responsive.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Start L5/index.html",
+		"/Users/nelarifi/Dropbox/Courses/Template.html",
+		"/Users/nelarifi/Library/Application Support/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Start L5/README",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Solution/responsive.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Solution/main.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Solution/index.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/pattern-mostly-fluid-quiz-blankcss.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Start/main.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/Start/index.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/mockup-to-article/index.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/First lesson.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/CSS lesson 2.html",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/stylesheet.css",
+		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end wed dev/mockup-to-article/reflections.txt",
+		"/Users/nelarifi/Dropbox/Learning/JavaScript udacity course.js",
+		"/Users/nelarifi/Dropbox/Learning/JavaScript udacity course v2.js",
+		"/Users/nelarifi/Dropbox/Learning/ARRAYS LESSON",
+		"/Users/nelarifi/Dropbox/Learning/Objects.js",
+		"/Users/nelarifi/Dropbox/Code/Java stuff/weaether xml example.json",
+		"/Users/nelarifi/Dropbox/Code/Java stuff/weatherApp"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"classClicked",
+			"geomet"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1733,
+								1733
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								815,
+								815
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								872,
+								872
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 92.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "memory-game.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 155.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
