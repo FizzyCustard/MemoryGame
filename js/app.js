@@ -31,7 +31,7 @@ function showCard(event) {
 
 		compareImage();
 		} else {
-		clickTarget.target.src = "img/square.png";
+		console.log("You can not doble click image");
 	}
 	previousClickedEvent = clickTarget;
 	console.log(previousClicked);
