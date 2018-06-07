@@ -69,35 +69,37 @@ function compareImage() {
 		previousClicked = imageClicked;
 	} else if (previousClicked == imageClicked) {
 		console.log("Hooray!!");
-		score = score + 1;
-		trackScore.innerHTML = score;
-		previousClicked = undefined ;
-		imageClicked = undefined ;
+		addPoint();
+		clearClicked();
 	} else if (previousClicked != imageClicked) {
 		console.log("boooooo!!") ;
 		historicImage = previousClicked
-		console.log(clickedImage);
 		turnReset();
-		// setTimeout(turnReset, 500);
-		previousClicked = undefined ;
-		imageClicked = undefined ;
+		clearClicked();
+		addPoint();
 	} else console.log("ERROR");
 		
 }
 
-
+//MAKES A PREVIOUS CLICKED AND CURRENT CLICKED CARDS TURN BACK OVER
 function turnReset() {
 	clickTarget.target.src = "img/square.png";
 	previousClickedEvent.target.src = "img/square.png";
 	
 }
 
-
-function scoreTracker() {
+//ADDS A POINT TO THE SCORE TRACKER
+function addPoint() {
+	score = score + 1;
+	trackScore.innerHTML = score;
 
 }
 
-
+//THIS CLEARS THE VARAIBLES USED AFTER EACH MOVE OF 2
+function clearClicked() {
+		previousClicked = undefined ;
+		imageClicked = undefined ;
+}
 
 
 
