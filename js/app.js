@@ -5,6 +5,7 @@
 const eachCube = document.getElementsByClassName("square-down") ;
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
+const feedback = document.getElementById("userFeedback");
 
 eachRow.addEventListener('click', showCard);
 var previousClicked = undefined;
@@ -14,8 +15,10 @@ var theImage;
 var clickTarget;
 var previousClickedEvent;
 var flippedCards = [];
+var thing;
 
 function showCard(event) {
+	feedback.innerHTML = "";
 	flippedCards.push(event);
 	clickTarget = event;
 	clickedImage = clickTarget.target.src;
@@ -69,13 +72,15 @@ function compareImage() {
 	} else if (previousClicked != imageClicked) {
 		console.log("boooooo!!") ;
 		userMistake();
+		feedback.innerHTML = "Woops you made a bo bo!";
 	} else console.log("ERROR");
 		
 }
 
 //Function runs when a user clicks 2 wrong cards
 function userMistake() {
-		turnReset();
+	thing = previousClickedEvent; //this is for the delayed flip funtion to run
+		setTimeout(turnReset, 800);
 		clearClicked();
 		removeLastFlipped();
 		addPoint();
@@ -85,7 +90,9 @@ function userMistake() {
 function addPoint() {
 	score = score + 1;
 	trackScore.innerHTML = score;
+	feedback.innerHTML = "Awesome!";
 	clearClicked();
+
 
 }
 
@@ -93,7 +100,8 @@ function addPoint() {
 //MAKES A PREVIOUS CLICKED AND CURRENT CLICKED CARDS TURN BACK OVER
 function turnReset() {
 	clickTarget.target.src = "img/square.png";
-	previousClickedEvent.target.src = "img/square.png";
+	thing.target.src = "img/square.png";
+	feedback.innerHTML = "";
 	
 }
 
