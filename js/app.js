@@ -30,7 +30,7 @@ function showCard(event) {
 
 		compareImage();
 		} else {
-		console.log("You can not doble click image");
+		console.log("You can not double click image");
 	}
 	previousClickedEvent = clickTarget;
 	winCheck();

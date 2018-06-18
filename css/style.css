@@ -85,6 +85,14 @@ h1 {
 
 .slider {
 	width: 600px;
+}
+
+
+
+.score {
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
 
 }
 
@@ -92,8 +100,9 @@ h1 {
 
 #resetGame {
     border: 2px;
+    font-size: 16px;
+    
 }
-
 
 
 

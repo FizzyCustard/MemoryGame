@@ -4,16 +4,76 @@
 		"selected_items":
 		[
 			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"user",
+				"userFeedback"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"con",
+				"const"
+			],
+			[
+				"s",
+				"src"
+			],
+			[
+				"for",
+				"for\tfor (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"pre",
+				"previousClickedEvent"
+			],
+			[
 				"cons",
 				"console"
 			],
 			[
-				"pre",
+				"cli",
+				"clickedImage"
+			],
+			[
+				"click",
+				"clickTarget"
+			],
+			[
+				"clikc",
+				"clickedImage"
+			],
+			[
+				"clik",
+				"clickedImage"
+			],
+			[
+				"each",
+				"eachCube"
+			],
+			[
+				"hi",
+				"historicImage"
+			],
+			[
+				"prei",
 				"previousClicked"
 			],
 			[
-				"con",
-				"console"
+				"prev",
+				"previousClicked"
 			],
 			[
 				"image",
@@ -32,10 +92,6 @@
 				"classClicked"
 			],
 			[
-				"click",
-				"clickedImage"
-			],
-			[
 				"the",
 				"theImage"
 			],
@@ -44,20 +100,12 @@
 				"addEventListener"
 			],
 			[
-				"each",
-				"eachRow"
-			],
-			[
 				"eac",
 				"eachCube"
 			],
 			[
 				"getElem",
 				"getElementsByClassName"
-			],
-			[
-				"get",
-				"getElementById"
 			],
 			[
 				"padd",
@@ -136,10 +184,6 @@
 				"margin-bottom\tproperty"
 			],
 			[
-				"fon",
-				"font-weight\tproperty"
-			],
-			[
 				"margi",
 				"margin-left\tproperty"
 			],
@@ -176,10 +220,6 @@
 				"flex-wrap\tproperty"
 			],
 			[
-				"margin",
-				"margin-right\tproperty"
-			],
-			[
 				"flex",
 				"flex-grow\tproperty"
 			],
@@ -204,10 +244,6 @@
 				"kitten-image"
 			],
 			[
-				"tex",
-				"text-transform\tproperty"
-			],
-			[
 				"col",
 				"color\tproperty"
 			],
@@ -226,10 +262,6 @@
 			[
 				"don",
 				"donut"
-			],
-			[
-				"for",
-				"forEach"
 			],
 			[
 				"mes",
@@ -343,7 +375,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1821,
+				"buffer_size": 1964,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -352,7 +384,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 1192,
+				"buffer_size": 1389,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -361,7 +393,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 3182,
+				"buffer_size": 4525,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -405,10 +437,12 @@
 	"expanded_folders":
 	[
 		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game",
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/img",
 		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/js"
 	],
 	"file_history":
 	[
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/index2.html",
 		"/Users/nelarifi/Dropbox/Code/Java stuff/WeatherAppStarter/index.html",
 		"/Users/nelarifi/Dropbox/Code/Java stuff/WeatherAppStarter/app.js",
 		"/Users/nelarifi/Dropbox/Courses/1 - Nano Front end web dev/Memory-Game/fend-project-memory-game-master/index.html",
@@ -445,7 +479,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -459,6 +493,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"scoreTracker",
+			"cubecolor",
 			"classClicked",
 			"geomet"
 		],
@@ -478,7 +514,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -487,15 +523,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1821,
+						"buffer_size": 1964,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1733,
-								1733
+								1853,
+								1853
 							]
 						],
 						"settings":
@@ -503,10 +539,10 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 273.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -515,15 +551,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1192,
+						"buffer_size": 1389,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								815,
-								815
+								1374,
+								1374
 							]
 						],
 						"settings":
@@ -536,7 +572,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -545,15 +581,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3182,
+						"buffer_size": 4525,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								872,
-								872
+								158,
+								158
 							]
 						],
 						"settings":
@@ -561,10 +597,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 92.0,
+						"translation.y": 95.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
