@@ -155,15 +155,15 @@ slider.oninput = function() {
 		}
     } else if (theValue == 2){
     	for (i = 0; i < eachCube.length; i++) {
-    		eachCube[i].style.backgroundColor = "#D1CE87";
+    		eachCube[i].style.backgroundColor = "#DCDC1A";
 		}
     } else if (theValue == 3){
     	for (i = 0; i < eachCube.length; i++) {
-    		eachCube[i].style.backgroundColor = "#93D187";
+    		eachCube[i].style.backgroundColor = "#32D333";
 		}
     } else {
     	for (i = 0; i < eachCube.length; i++) {
-    		eachCube[i].style.backgroundColor = "#87CBD1";
+    		eachCube[i].style.backgroundColor = "#300B39";
     	}
     }   
 }
