@@ -1,16 +1,18 @@
 body {
-	background: #ffffff url('../img/geometry2.png');
+    background: #ffffff url('../img/geometry2.png');
 }
 
 h1 {
-	text-align: center;
+    text-align: center;
 }
+
 
 
 /*SLIDER CSS BELOW*/
 
 
 /* The slider itself */
+
 .slidecontainer {
     width: 602px;
     margin-left: auto;
@@ -35,6 +37,7 @@ h1 {
     opacity: 1;
 }
 
+
 /*.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -45,6 +48,7 @@ h1 {
     cursor: pointer;
 }*/
 
+
 /*.slider::-moz-range-thumb {
     width: 23px;
     height: 24px;
@@ -54,48 +58,52 @@ h1 {
 }*/
 
 .slider::-webkit-slider-thumb {
--webkit-appearance: none;
-  height: 25px;
-  width: 25px;
-  background-color: #555;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
 }
+
 
 
 /*SLIDER CODE ENDS*/
 
 
+#winner-text {
+    
+}
+
 .theGap {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 
 #table-square {
-	width: 617px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 617px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #row-one {
-	flex-wrap: wrap;
-	margin-left: auto;
-	margin-right: auto;
-
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .square-down {
-	/*background-color: grey;*/
-	background-color: #ffffff ;
-	position: relative;
- 	top: 0;
-  	left: 0;
+    /*background-color: grey;*/
+    background-color: #ffffff;
+    position: relative;
+    top: 0;
+    left: 0;
     border-color: blue;
 }
 
 .slider {
-	width: 600px;
+    width: 600px;
 }
 
 
@@ -104,25 +112,12 @@ h1 {
     font-size: 25px;
     text-align: center;
     width: 100%;
-
 }
+
 
 /*Button for the reset of the game*/
 
 #resetGame {
     border: 2px;
     font-size: 16px;
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-

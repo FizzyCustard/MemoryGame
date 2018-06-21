@@ -2,6 +2,7 @@ const eachCube = document.getElementsByClassName("square-down");
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
 const feedback = document.getElementById("userFeedback");
+const winnerModal = document.getElementById("winner-text");
 
 eachRow.addEventListener('click', showCard);
 let previousClicked = undefined;
@@ -12,6 +13,38 @@ let clickTarget;
 let previousClickedEvent;
 let flippedCards = [];
 let thing;
+
+// CODE FOR THE SLIDER
+
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+slider.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    slider.innerHTML = this.value;
+    theValue = this.value
+    if (theValue == 1) {
+        let i;
+        for (i = 0; i < eachCube.length; i++) {
+            eachCube[i].style.backgroundColor = "#ffffff";
+        }
+    } else if (theValue == 2) {
+        for (i = 0; i < eachCube.length; i++) {
+            eachCube[i].style.backgroundColor = "#DCDC1A";
+        }
+    } else if (theValue == 3) {
+        for (i = 0; i < eachCube.length; i++) {
+            eachCube[i].style.backgroundColor = "#32D333";
+        }
+    } else {
+        for (i = 0; i < eachCube.length; i++) {
+            eachCube[i].style.backgroundColor = "#300B39";
+        }
+    }
+}
+
+//END OF SLIDER CODE
 
 
 //code for the timer
@@ -25,12 +58,6 @@ const buttonStop = document.getElementById('button-stop');
 const buttonReset = document.getElementById('button-reset');
 let Interval;
 let timerCheck = 0
-
-// buttonStart.onclick = function() {
-
-//      clearInterval(Interval);
-//      Interval = setInterval(startTimer, 10);
-//   }
 
 function timerStop() {
     clearInterval(Interval);
@@ -72,8 +99,8 @@ function startTimer() {
 
 
 function showCard(event) {
-    feedback.innerHTML = "";
-    flippedCards.push(event);
+    // feedback.innerHTML = "";
+    
     clickTarget = event;
     clickedImage = clickTarget.target.src;
     theImage = clickedImage.endsWith("square.png");
@@ -81,7 +108,7 @@ function showCard(event) {
 
     if (theImage === true) {
         imageShower(imageClicked);
-
+        flippedCards.push(event);
         compareImage();
     } else {
         console.log("You can not double click image");
@@ -94,7 +121,7 @@ function showCard(event) {
         Interval = setInterval(startTimer, 10);
         console.log("Starting timer")
         timerCheck++
-    } else console.log("Not starting timer")
+    }
 
     winCheck();
 }
@@ -126,15 +153,11 @@ function imageShower(imageClicked) {
 
 function compareImage() {
     if (previousClicked == undefined) {
-        console.log("Nothing previous");
         previousClicked = imageClicked;
     } else if (previousClicked == imageClicked) {
-        console.log("Hooray!!");
         addPoint();
     } else if (previousClicked != imageClicked) {
-        console.log("boooooo!!");
         userMistake();
-        feedback.innerHTML = "Woops you made a bo bo!";
     } else console.log("ERROR");
 
 }
@@ -152,7 +175,6 @@ function userMistake() {
 function addPoint() {
     score = score + 1;
     trackScore.innerHTML = score;
-    feedback.innerHTML = "Awesome!";
     clearClicked();
 
 
@@ -163,7 +185,7 @@ function addPoint() {
 function turnReset() {
     clickTarget.target.src = "img/square.png";
     thing.target.src = "img/square.png";
-    feedback.innerHTML = "";
+    // feedback.innerHTML = "";
 
 }
 
@@ -197,40 +219,10 @@ function winCheck() {
     if (flippedCards.length == 16) {
         console.log("WINNER");
         timerStop();
-        //TODO: need to fix this little hack
-        feedback.innerHTML = "Great work you won!!! In a time of " + seconds + "." + tens;
+        //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
+        winnerModal.innerHTML = "Great work you won!!! In a time of " + seconds + "." + tens;
+        $('#myModal').modal();
     }
 }
 
 
-// CODE FOR THE SLIDER
-
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-slider.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    slider.innerHTML = this.value;
-    theValue = this.value
-    if (theValue == 1) {
-        let i;
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#ffffff";
-        }
-    } else if (theValue == 2) {
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#DCDC1A";
-        }
-    } else if (theValue == 3) {
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#32D333";
-        }
-    } else {
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#300B39";
-        }
-    }
-}
-
-//END OF SLIDER CODE

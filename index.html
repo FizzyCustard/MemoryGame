@@ -1,71 +1,82 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Memory Game</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="${2}">
-	
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- <body onload="addListener()"> -->
-</head> 
+</head>
 
 <body>
-	<h1>My Memory Game</h1>
+    <h1>My Memory Game</h1>
 
-	<div class="slidecontainer">
-  		<input type="range" min="1" max="4" value="1" class="slider" id="myRange">
-  		
-	</div>
-	<h2>Feedb ack: <span id= "userFeedback"></span></h2>
-	<p class="score">Moves: <span id="userScore">0</span></p>
-
-	<div class="wrapper">
-		<h2>Stopwatch</h2>
-		<p><span id="seconds">00</span>:<span id="tens">00</span></p>
-	</div> 
-
-	<div class="theGap"></div>
-
-	<div id="table-square">
-		<div id="row-one">
-			<!-- data-image-type="a" -->
-			<img src="img/square.png" class="image-one square-down">
-			<img src="img/square.png" class="image-one square-down">
-			<img src="img/square.png" class="image-two square-down">
-			<img src="img/square.png" class="image-two square-down">
-		</div>
-		<div class="row-two">
-			<img src="img/square.png" class="image-three square-down">
-			<img src="img/square.png" class="image-three square-down">
-			<img src="img/square.png" class="image-four square-down">
-			<img src="img/square.png" class="image-four square-down">
-		</div>
-
-		<div class="row-three">
-			<img src="img/square.png" class="image-five square-down">
-			<img src="img/square.png" class="image-five square-down">
-			<img src="img/square.png" class="image-six square-down">
-			<img src="img/square.png" class="image-six square-down">
-		</div>
-		
-		<div class="row-three">
-			<img src="img/square.png" class="image-seven square-down">
-			<img src="img/square.png" class="image-seven square-down">
-			<img src="img/square.png" class="image-eight square-down">
-			<img src="img/square.png" class="image-eight square-down">
-		</div>
-
-	</div>
-	
-	<input type="button" value="Reset" id="resetGame" onclick="gameReset();">
-
-<script src="js/app.js"></script>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Your a winner!</h3>
+        </div>
+        <div id="modal-body">
+          <p id="winner-text">Winner text goes here</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
+    <div class="slidecontainer">
+        <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
+    </div>
+    <h2><span id= "userFeedback"></span></h2>
+    <p class="score">Moves: <span id="userScore">0</span></p>
+    <div class="wrapper">
+        <h2>Stopwatch</h2>
+        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+    </div>
+    <div class="theGap"></div>
+    <div id="table-square">
+        <div id="row-one">
+            <!-- data-image-type="a" -->
+            <img src="img/square.png" class="image-one square-down">
+            <img src="img/square.png" class="image-one square-down">
+            <img src="img/square.png" class="image-two square-down">
+            <img src="img/square.png" class="image-two square-down">
+        </div>
+        <div class="row-two">
+            <img src="img/square.png" class="image-three square-down">
+            <img src="img/square.png" class="image-three square-down">
+            <img src="img/square.png" class="image-four square-down">
+            <img src="img/square.png" class="image-four square-down">
+        </div>
+        <div class="row-three">
+            <img src="img/square.png" class="image-five square-down">
+            <img src="img/square.png" class="image-five square-down">
+            <img src="img/square.png" class="image-six square-down">
+            <img src="img/square.png" class="image-six square-down">
+        </div>
+        <div class="row-three">
+            <img src="img/square.png" class="image-seven square-down">
+            <img src="img/square.png" class="image-seven square-down">
+            <img src="img/square.png" class="image-eight square-down">
+            <img src="img/square.png" class="image-eight square-down">
+        </div>
+    </div>
+    <input type="button" value="Reset" id="resetGame" onclick="gameReset();">
+    <script src="js/app.js"></script>
 </body>
 
 </html>
-
