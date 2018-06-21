@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"margi",
+				"margin-right\tproperty"
+			],
+			[
+				"mar",
+				"margin-left\tproperty"
+			],
+			[
 				"fon",
 				"font-size\tproperty"
 			],
@@ -178,14 +186,6 @@
 			[
 				"font",
 				"font-family\tproperty"
-			],
-			[
-				"mar",
-				"margin-bottom\tproperty"
-			],
-			[
-				"margi",
-				"margin-left\tproperty"
 			],
 			[
 				"max",
@@ -375,7 +375,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1964,
+				"buffer_size": 1966,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -384,7 +384,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 1389,
+				"buffer_size": 1625,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -393,7 +393,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 4525,
+				"buffer_size": 4559,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -493,6 +493,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"naji",
 			"scoreTracker",
 			"cubecolor",
 			"classClicked",
@@ -514,7 +515,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -523,15 +524,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1964,
+						"buffer_size": 1966,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1853,
-								1853
+								685,
+								685
 							]
 						],
 						"settings":
@@ -539,10 +540,10 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 56.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -551,15 +552,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1389,
+						"buffer_size": 1625,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1374,
-								1374
+								986,
+								989
 							]
 						],
 						"settings":
@@ -581,15 +582,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4525,
+						"buffer_size": 4559,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								158,
-								158
+								3634,
+								3634
 							]
 						],
 						"settings":
@@ -598,10 +599,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 95.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
