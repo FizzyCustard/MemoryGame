@@ -46,6 +46,38 @@ slider.oninput = function() {
 
 //END OF SLIDER CODE
 
+// CODE FOR THE RATING SYSTEM
+
+let starRating = document.getElementById("star-rating");
+let starRatingImages = starRating.getElementsByTagName("img");
+let starCheck;
+//TODO need to sort out the time for the rating system keeps on making multiple timers
+function rating() {
+
+	// let makeStar = document.createElement("IMG");
+	// makeStar.setAttribute("src", "img/star.png");
+	// makeStar.setAttribute("alt", "Stars for the rating system");
+	if (seconds < 5) {
+		console.log("5 star")
+	}else if (seconds <= 10) {
+		starRatingImages.removeChild(starRatingImages.childNodes[0]);
+		console.log("down to 4 star")
+	} else if (seconds <= 15) {
+		starRating.removeChild(starRating.childNodes[1]);
+		console.log("down to 3 star")
+	} else if (seconds <= 20) {
+		starRating.removeChild(starRating.childNodes[1]);
+		console.log("down to 2 star")
+	} else  if (seconds <= 25) {
+		starRating.removeChild(starRating.childNodes[1]);
+		console.log("down to 1 star")
+	// starRating.appendChild(makeStar);
+	} else {
+		console.log("staying on current star");
+		clearInterval(starCheck);
+	}
+}
+
 
 //code for the timer
 
@@ -69,6 +101,7 @@ function timerReset() {
     seconds = "00";
     appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
+    timerCheck = 0
 }
 
 
@@ -97,10 +130,8 @@ function startTimer() {
 
 //TIMER CODE END
 
-
 function showCard(event) {
     // feedback.innerHTML = "";
-    
     clickTarget = event;
     clickedImage = clickTarget.target.src;
     theImage = clickedImage.endsWith("square.png");
@@ -121,6 +152,7 @@ function showCard(event) {
         Interval = setInterval(startTimer, 10);
         console.log("Starting timer")
         timerCheck++
+        starCheck = setInterval(rating, 4500);
     }
 
     winCheck();
@@ -176,8 +208,6 @@ function addPoint() {
     score = score + 1;
     trackScore.innerHTML = score;
     clearClicked();
-
-
 }
 
 
@@ -208,9 +238,12 @@ function removeLastFlipped() {
 function gameReset() {
     for (let i = flippedCards.length - 1; i >= 0; i--) {
         flippedCards[i].target.src = "img/square.png";
+        flippedCards.pop();
     }
     score = 0;
     trackScore.innerHTML = score;
+    timerReset();
+    clearInterval(starCheck);
 }
 
 
@@ -220,8 +253,9 @@ function winCheck() {
         console.log("WINNER");
         timerStop();
         //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
-        winnerModal.innerHTML = "Great work you won!!! In a time of " + seconds + "." + tens;
-        $('#myModal').modal();
+        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens;
+        $('#winnerModal').modal();
+        clearInterval(starCheck);
     }
 }
 

@@ -18,7 +18,7 @@
     <h1>My Memory Game</h1>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="winnerModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -29,9 +29,10 @@
         </div>
         <div id="modal-body">
           <p id="winner-text">Winner text goes here</p>
+          <p>Would you like to play again?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="gameReset();">Play Again</button>
         </div>
       </div>
     </div>
@@ -43,9 +44,20 @@
     </div>
     <h2><span id= "userFeedback"></span></h2>
     <p class="score">Moves: <span id="userScore">0</span></p>
+    <p>Rating</p>
+    	<div id="star-rating">
+    		<span>
+    			<img src="img/star.png">
+		    	<img src="img/star.png">
+		    	<img src="img/star.png">
+		    	<img src="img/star.png">
+		    	<img src="img/star.png">
+    		</span>
+    		
+    	</div>
     <div class="wrapper">
         <h2>Stopwatch</h2>
-        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+        <p id="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
     </div>
     <div class="theGap"></div>
     <div id="table-square">

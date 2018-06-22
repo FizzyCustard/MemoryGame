@@ -71,9 +71,13 @@ h1 {
 
 /*SLIDER CODE ENDS*/
 
-
+/*TODO styling for the winner modal*/
 #winner-text {
-    
+
+}
+
+#timer {
+    font-size: 27px;
 }
 
 .theGap {
@@ -117,6 +121,7 @@ h1 {
 
 /*Button for the reset of the game*/
 
+/*TODO need to sort styling and add a bit more space above to make the button stand out more*/
 #resetGame {
     border: 2px;
     font-size: 16px;
