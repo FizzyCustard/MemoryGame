@@ -1,4 +1,4 @@
-const eachCube = document.getElementsByClassName("square-down");
+const eachCube = document.getElementsByClassName("square");
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
 const feedback = document.getElementById("userFeedback");
@@ -132,10 +132,19 @@ function startTimer() {
 
 function showCard(event) {
     // feedback.innerHTML = "";
+    if (timerCheck === 0) {
+    	randomiseSquares()
+        clearInterval(Interval);
+        Interval = setInterval(startTimer, 10);
+        console.log("Starting timer")
+        timerCheck++
+        starCheck = setInterval(rating, 4500);
+    }
+
     clickTarget = event;
     clickedImage = clickTarget.target.src;
     theImage = clickedImage.endsWith("square.png");
-    imageClicked = clickTarget.target.className;
+    imageClicked = clickTarget.target.dataset.imagetype;
 
     if (theImage === true) {
         imageShower(imageClicked);
@@ -147,13 +156,7 @@ function showCard(event) {
     previousClickedEvent = clickTarget;
 
 
-    if (timerCheck === 0) {
-        clearInterval(Interval);
-        Interval = setInterval(startTimer, 10);
-        console.log("Starting timer")
-        timerCheck++
-        starCheck = setInterval(rating, 4500);
-    }
+
 
     winCheck();
 }
@@ -162,21 +165,24 @@ function showCard(event) {
 // This function below takes 2 arguments from the showCard function and then shows and hides the image that are clicked on.
 
 function imageShower(imageClicked) {
-    if (imageClicked == "image-one square-down") {
+    if (imageClicked == "a") {
         clickTarget.target.src = "img/icons/one.png";
-    } else if (imageClicked == "image-two square-down") {
+    } else if (imageClicked == "b") {
         clickTarget.target.src = "img/icons/two.png";
-    } else if (imageClicked == "image-three square-down") {
+    } else if (imageClicked == "c") {
         clickTarget.target.src = "img/icons/three.png";
-    } else if (imageClicked == "image-four square-down") {
+    } else if (imageClicked == "d") {
         clickTarget.target.src = "img/icons/four.png";
-    } else if (imageClicked == "image-five square-down") {
+    } else if (imageClicked == "e") {
         clickTarget.target.src = "img/icons/five.png";
-    } else if (imageClicked == "image-six square-down") {
+    } else if (imageClicked == "f") {
         clickTarget.target.src = "img/icons/six.png";
-    } else if (imageClicked == "image-seven square-down") {
+    } else if (imageClicked == "g") {
         clickTarget.target.src = "img/icons/seven.png";
-    } else clickTarget.target.src = "img/icons/eight.png";
+    } else if (imageClicked == "h") {
+    	clickTarget.target.src = "img/icons/eight.png";
+    } else console.log("Issue with imageShower function")
+    
 }
 
 
@@ -236,9 +242,8 @@ function removeLastFlipped() {
 
 //LOOP THAT FLIPS ALL CARDS BACK OVER TO RESET GAME
 function gameReset() {
-    for (let i = flippedCards.length - 1; i >= 0; i--) {
-        flippedCards[i].target.src = "img/square.png";
-        flippedCards.pop();
+    for (let i = 15 ; i >= 0; i--) {
+        document.getElementsByClassName("square")[i].src = "img/square.png";
     }
     for (let i = 3 ; i >= 0 ; i--) {
     	document.getElementsByClassName("star")[i].style.display = "";
@@ -249,6 +254,24 @@ function gameReset() {
     timerReset();
     clearInterval(starCheck);
 }
+
+
+function randomiseSquares() {
+	const imageDataSet = "abcdefghabcdefgh";
+	let possible = imageDataSet
+	for (i = 15 ; i >= 0 ; i--) {
+		let choosenLetter = possible.charAt(Math.floor(Math.random() * possible.length))
+		// console.log(choosenLetter)
+		possible = possible.replace((choosenLetter), (""))
+		console.log(possible)
+		document.getElementsByClassName("square")[i].dataset.imagetype = "" + choosenLetter;
+		console.log(document.getElementsByClassName("square")[i].dataset.imagetype);
+	}
+
+
+	
+}
+
 
 
 //FUNCTION THAT CHECKS IS THE USER HAS WON
