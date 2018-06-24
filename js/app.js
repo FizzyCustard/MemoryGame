@@ -60,16 +60,16 @@ function rating() {
 	if (seconds < 5) {
 		console.log("5 star")
 	}else if (seconds <= 10) {
-		starRatingImages.removeChild(starRatingImages.childNodes[0]);
+		document.getElementsByClassName("star")[0].style.display = "none";
 		console.log("down to 4 star")
 	} else if (seconds <= 15) {
-		starRating.removeChild(starRating.childNodes[1]);
+		document.getElementsByClassName("star")[1].style.display = "none";
 		console.log("down to 3 star")
 	} else if (seconds <= 20) {
-		starRating.removeChild(starRating.childNodes[1]);
+		document.getElementsByClassName("star")[2].style.display = "none";
 		console.log("down to 2 star")
 	} else  if (seconds <= 25) {
-		starRating.removeChild(starRating.childNodes[1]);
+		document.getElementsByClassName("star")[3].style.display = "none";
 		console.log("down to 1 star")
 	// starRating.appendChild(makeStar);
 	} else {
@@ -240,6 +240,10 @@ function gameReset() {
         flippedCards[i].target.src = "img/square.png";
         flippedCards.pop();
     }
+    for (let i = 3 ; i >= 0 ; i--) {
+    	document.getElementsByClassName("star")[i].style.display = "";
+    }
+
     score = 0;
     trackScore.innerHTML = score;
     timerReset();
