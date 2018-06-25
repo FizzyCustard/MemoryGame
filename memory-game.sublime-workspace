@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"con",
+				"const"
+			],
+			[
+				"is",
+				"isClickable"
+			],
+			[
+				"flipp",
+				"flippedArray"
+			],
+			[
+				"fli",
+				"flippedArray"
+			],
+			[
+				"star",
+				"starRatingImages"
+			],
+			[
+				"getE",
+				"getElementById"
+			],
+			[
+				"clea",
+				"clearInterval"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"sta",
+				"starRating"
+			],
+			[
+				"tim",
+				"timerCheck"
+			],
+			[
+				"time",
+				"timerReset"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"fee",
+				"feedback"
+			],
+			[
+				"sto",
+				"timerStop"
+			],
+			[
+				"Tier",
+				"timerCheck"
+			],
+			[
 				"margi",
 				"margin-right\tproperty"
 			],
@@ -28,14 +88,6 @@
 				"userFeedback"
 			],
 			[
-				"get",
-				"getElementsByClassName"
-			],
-			[
-				"con",
-				"const"
-			],
-			[
 				"s",
 				"src"
 			],
@@ -46,10 +98,6 @@
 			[
 				"pre",
 				"previousClickedEvent"
-			],
-			[
-				"cons",
-				"console"
 			],
 			[
 				"cli",
@@ -288,10 +336,6 @@
 				"interestRatePercent"
 			],
 			[
-				"is",
-				"isOpen"
-			],
-			[
 				"num",
 				"numbers"
 			],
@@ -375,17 +419,19 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1966,
+				"buffer_size": 3883,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "/*TODO MAKE THE IMAGES A DRAWN SQUARE*/\n\n\nbody {\n    background: #ffffff url('../img/geometry2.png');\n}\n\nh1 {\n    text-align: center;\n}\n\n\n\n/*SLIDER CSS BELOW*/\n\n\n/* The slider itself */\n\n.slidecontainer {\n    width: 602px;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.slider {\n    -webkit-appearance: none;\n    width: 100%;\n    height: 10px;\n    border-radius: 5px;\n    background: #d3d3d3;\n    outline: none;\n    opacity: 0.7;\n    -webkit-transition: .2s;\n    transition: opacity .2s;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.slider:hover {\n    opacity: 1;\n}\n\n\n/*.slider::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    appearance: none;\n    width: 30px;\n    height: 30px;\n    border: 0;\n    background: url(\"../img/troll.png\");\n    cursor: pointer;\n}*/\n\n\n/*.slider::-moz-range-thumb {\n    width: 23px;\n    height: 24px;\n    border: 0;\n    background: url(\"../img/oval.png\");\n    cursor: pointer;\n}*/\n\n.slider::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    height: 25px;\n    width: 25px;\n    background-color: #555;\n    border-radius: 50%;\n    display: inline-block;\n    cursor: pointer;\n}\n\n\n\n/*SLIDER CODE ENDS*/\n\n/*TODO styling for the winner modal*/\n#winner-text {\n\n}\n\n#timer {\n    font-size: 27px;\n}\n\n.theGap {\n    margin-bottom: 20px;\n}\n\n\n#table-square {\n    width: 617px;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n#row-one {\n    flex-wrap: wrap;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.square-down {\n    /*background-color: grey;*/\n    background-color: #ffffff;\n    position: relative;\n    top: 0;\n    left: 0;\n    border-color: blue;\n}\n\n.slider {\n    width: 600px;\n}\n\n\n\n.score {\n    font-size: 25px;\n    text-align: center;\n    width: 100%;\n}\n\n#rating-section {\n    text-align: center;\n}\n\n/*Button for the reset of the game*/\n\n/*TODO need to sort styling and add a bit more space above to make the button stand out more*/\n#resetGame {\n    border: 2px;\n    font-size: 16px;\n}",
 			"file": "css/style.css",
+			"file_size": 1896,
+			"file_write_time": 131743877504716641,
 			"settings":
 			{
-				"buffer_size": 1625,
-				"encoding": "UTF-8",
+				"buffer_size": 1938,
 				"line_ending": "Unix"
 			}
 		},
@@ -393,7 +439,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 4559,
+				"buffer_size": 8799,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -412,7 +458,15 @@
 		[
 			[
 				"pack",
-				"Package Control: Enable Package"
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
 			]
 		],
 		"width": 0.0
@@ -437,11 +491,13 @@
 	"expanded_folders":
 	[
 		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game",
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/css",
 		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/img",
 		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/js"
 	],
 	"file_history":
 	[
+		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/css/style.css",
 		"/Users/nelarifi/Dropbox/Courses/udacity/memory-game/index2.html",
 		"/Users/nelarifi/Dropbox/Code/Java stuff/WeatherAppStarter/index.html",
 		"/Users/nelarifi/Dropbox/Code/Java stuff/WeatherAppStarter/app.js",
@@ -493,6 +549,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"todo",
+			"image-one",
+			"flipp",
+			"down",
+			"starCheck",
+			"clearClicked",
+			"Interval",
+			"setTimeout",
+			"timerCheck",
+			"Interval",
+			"clearInterval",
+			"gameReset",
+			"myMod",
+			"my",
+			"flippe",
+			"Awesome!",
+			"feedback",
+			"awes",
+			"feedba",
+			"winCheck",
+			"thing",
+			"();\n",
+			"imageShower",
+			"winn",
 			"naji",
 			"scoreTracker",
 			"cubecolor",
@@ -524,23 +604,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1966,
+						"buffer_size": 3883,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								685,
-								685
+								1752,
+								1738
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"SL.13.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 56.0,
+						"translation.y": 663.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -552,19 +637,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1625,
+						"buffer_size": 1938,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								986,
-								989
+								39,
+								39
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+							],
 							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -582,24 +670,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4559,
+						"buffer_size": 8799,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3634,
-								3634
+								7806,
+								7806
 							]
 						],
 						"settings":
 						{
+							"SL.15.region_keys":
+							[
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4115.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -639,6 +731,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 120.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0

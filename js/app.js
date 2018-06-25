@@ -1,7 +1,5 @@
-const eachCube = document.getElementsByClassName("square");
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
-const feedback = document.getElementById("userFeedback");
 const winnerModal = document.getElementById("winner-text");
 
 let isClickable = true;
@@ -11,7 +9,6 @@ eachRow.addEventListener('click', showCard);
 let previousClicked;
 let imageClicked;
 let score = 0;
-let theImage;
 let clickTarget;
 let previousClickedEvent;
 let flippedCards = [];
@@ -51,33 +48,24 @@ let thing;
 
 // CODE FOR THE RATING SYSTEM
 
-let starRating = document.getElementById("star-rating");
-let starRatingImages = starRating.getElementsByTagName("img");
 let starCheck;
-
+let starCounter = 5;
 function rating() {
 
-    // let makeStar = document.createElement("IMG");
-    // makeStar.setAttribute("src", "img/star.png");
-    // makeStar.setAttribute("alt", "Stars for the rating system");
-    if (seconds < 15) {
-        console.log("5 star");
-    } else if (seconds <= 25) {
+    
+
+    if (score === 20) {
         document.getElementsByClassName("star")[0].style.display = "none";
-        console.log("down to 4 star");
-    } else if (seconds <= 45) {
+        starCounter--;
+    } else if (score === 25) {
         document.getElementsByClassName("star")[1].style.display = "none";
-        console.log("down to 3 star");
-    } else if (seconds <= 60) {
+        starCounter--;
+    } else if (score === 35) {
         document.getElementsByClassName("star")[2].style.display = "none";
-        console.log("down to 2 star");
-    } else if (seconds <= 70) {
+        starCounter--;
+    } else if (score === 40) {
         document.getElementsByClassName("star")[3].style.display = "none";
-        console.log("down to 1 star");
-        // starRating.appendChild(makeStar);
-    } else {
-        console.log("staying on current star");
-        clearInterval(starCheck);
+        starCounter--;
     }
 }
 
@@ -88,9 +76,10 @@ let seconds = 00;
 let tens = 00;
 const appendTens = document.getElementById("tens");
 const appendSeconds = document.getElementById("seconds");
-const buttonStart = document.getElementById('button-start');
-const buttonStop = document.getElementById('button-stop');
-const buttonReset = document.getElementById('button-reset');
+//TODO remove 3 consts below
+// const buttonStart = document.getElementById('button-start');
+// const buttonStop = document.getElementById('button-stop');
+// const buttonReset = document.getElementById('button-reset');
 let Interval;
 let timerCheck = 0;
 
@@ -104,7 +93,7 @@ function timerReset() {
     seconds = "00";
     appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
-    timerCheck = 0
+    timerCheck = 0;
 }
 
 
@@ -143,23 +132,19 @@ function showCard(event) {
             Interval = setInterval(startTimer, 10);
             console.log("Starting timer");
             timerCheck++;
-            starCheck = setInterval(rating, 4500);
         }
 
         clickTarget = event;
-        clickedImage = clickTarget.target.src;
-        theImage = clickedImage.endsWith("square.png");
+        const clickedImage = clickTarget.target.src;
+        const theImage = clickedImage.endsWith("square.png");
         imageClicked = clickTarget.target.dataset.imagetype;
 
-        if (theImage === true) {
+        if (theImage) {
             imageShower(imageClicked);
             flippedCards.push(event);
             compareImage();
-        } else {
-            console.log("You can not double click image");
         }
         previousClickedEvent = clickTarget;
-
 
         winCheck();
     }
@@ -186,7 +171,7 @@ function imageShower(imageClicked) {
         clickTarget.target.src = "img/icons/seven.png";
     } else if (imageClicked == "h") {
         clickTarget.target.src = "img/icons/eight.png";
-    } else console.log("Issue with imageShower function")
+    } else console.error("Issue with imageShower function");
 
 }
 
@@ -222,6 +207,7 @@ function addPoint() {
     score = score + 1;
     trackScore.innerHTML = score;
     clearClicked();
+    rating();
 }
 
 
@@ -249,9 +235,10 @@ function removeLastFlipped() {
 }
 
 
-//LOOP THAT FLIPS ALL CARDS BACK OVER TO RESET GAME
+//FUNCTION THAT COMPLETELY RESETS GAME
+//This funtion is used from the index.html file 
 function gameReset() {
-    //below loop flipps all the cards back over
+    //below loop flips all the cards back over
     for (let i = 15; i >= 0; i--) {
         document.getElementsByClassName("square")[i].src = "img/square.png";
     }
@@ -293,7 +280,7 @@ function winCheck() {
         console.log("WINNER");
         timerStop();
         //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
-        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. And only " + score + " moves!";
+        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. With a " + starCounter + " star rating!";
         $('#winnerModal').modal();
         clearInterval(starCheck);
     }
