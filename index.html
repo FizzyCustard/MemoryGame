@@ -38,13 +38,14 @@
     </div>
   </div>
 
-
-    <div class="slidecontainer">
+<!-- TODO make the slider control dificulty -->
+<!--     <div class="slidecontainer">
         <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
-    </div>
+    </div> -->
     <h2><span id= "userFeedback"></span></h2>
     <p class="score">Moves: <span id="userScore">0</span></p>
-    <p>Rating</p>
+    <div id="rating-section">
+    	<h3>Rating</h3>
     	<div id="star-rating">
     			<img src="img/star.png" id="star1" class = "star">
 		    	<img src="img/star.png" id="star2" class = "star">
@@ -52,6 +53,8 @@
 		    	<img src="img/star.png" id="star4" class = "star">
 		    	<img src="img/star.png" id="star5" class = "star">
     	</div>
+    </div>
+    
     <div class="wrapper">
         <h2>Stopwatch</h2>
         <p id="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
@@ -59,29 +62,29 @@
     <div class="theGap"></div>
     <div id="table-square">
         <div id="row-one">
-            <!-- data-image-type="a" -->
-            <img src="img/square.png" class="image-one square" data-imageType="">
-            <img src="img/square.png" class="image-one square" data-imageType="">
-            <img src="img/square.png" class="image-two square" data-imageType="">
-            <img src="img/square.png" class="image-two square" data-imageType="">
+            <!-- THE data-imageType IS THERE FOR THE RANDOMISING FUNCTION TO WORK -->
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
         </div>
         <div class="row-two">
-            <img src="img/square.png" class="image-three square" data-imageType="">
-            <img src="img/square.png" class="image-three square" data-imageType="">
-            <img src="img/square.png" class="image-four square" data-imageType="">
-            <img src="img/square.png" class="image-four square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
         </div>
         <div class="row-three">
-            <img src="img/square.png" class="image-five square" data-imageType="">
-            <img src="img/square.png" class="image-five square" data-imageType="">
-            <img src="img/square.png" class="image-six square" data-imageType="">
-            <img src="img/square.png" class="image-six square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
         </div>
         <div class="row-three">
-            <img src="img/square.png" class="image-seven square" data-imageType="">
-            <img src="img/square.png" class="image-seven square" data-imageType="">
-            <img src="img/square.png" class="image-eight square" data-imageType="">
-            <img src="img/square.png" class="image-eight square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class= "square" data-imageType="">
         </div>
     </div>
     <input type="button" value="Reset" id="resetGame" onclick="gameReset();">

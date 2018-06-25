@@ -16,33 +16,33 @@ let thing;
 
 // CODE FOR THE SLIDER
 
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-slider.innerHTML = slider.value; // Display the default slider value
+// let slider = document.getElementById("myRange");
+// let output = document.getElementById("demo");
+// slider.innerHTML = slider.value; // Display the default slider value
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    slider.innerHTML = this.value;
-    theValue = this.value
-    if (theValue == 1) {
-        let i;
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#ffffff";
-        }
-    } else if (theValue == 2) {
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#DCDC1A";
-        }
-    } else if (theValue == 3) {
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#32D333";
-        }
-    } else {
-        for (i = 0; i < eachCube.length; i++) {
-            eachCube[i].style.backgroundColor = "#300B39";
-        }
-    }
-}
+// // Update the current slider value (each time you drag the slider handle)
+// slider.oninput = function() {
+//     slider.innerHTML = this.value;
+//     theValue = this.value
+//     if (theValue == 1) {
+//         let i;
+//         for (i = 0; i < eachCube.length; i++) {
+//             eachCube[i].style.backgroundColor = "#ffffff";
+//         }
+//     } else if (theValue == 2) {
+//         for (i = 0; i < eachCube.length; i++) {
+//             eachCube[i].style.backgroundColor = "#DCDC1A";
+//         }
+//     } else if (theValue == 3) {
+//         for (i = 0; i < eachCube.length; i++) {
+//             eachCube[i].style.backgroundColor = "#32D333";
+//         }
+//     } else {
+//         for (i = 0; i < eachCube.length; i++) {
+//             eachCube[i].style.backgroundColor = "#300B39";
+//         }
+//     }
+// }
 
 //END OF SLIDER CODE
 
@@ -51,31 +51,31 @@ slider.oninput = function() {
 let starRating = document.getElementById("star-rating");
 let starRatingImages = starRating.getElementsByTagName("img");
 let starCheck;
-//TODO need to sort out the time for the rating system keeps on making multiple timers
+
 function rating() {
 
-	// let makeStar = document.createElement("IMG");
-	// makeStar.setAttribute("src", "img/star.png");
-	// makeStar.setAttribute("alt", "Stars for the rating system");
-	if (seconds < 5) {
-		console.log("5 star")
-	}else if (seconds <= 10) {
-		document.getElementsByClassName("star")[0].style.display = "none";
-		console.log("down to 4 star")
-	} else if (seconds <= 15) {
-		document.getElementsByClassName("star")[1].style.display = "none";
-		console.log("down to 3 star")
-	} else if (seconds <= 20) {
-		document.getElementsByClassName("star")[2].style.display = "none";
-		console.log("down to 2 star")
-	} else  if (seconds <= 25) {
-		document.getElementsByClassName("star")[3].style.display = "none";
-		console.log("down to 1 star")
-	// starRating.appendChild(makeStar);
-	} else {
-		console.log("staying on current star");
-		clearInterval(starCheck);
-	}
+    // let makeStar = document.createElement("IMG");
+    // makeStar.setAttribute("src", "img/star.png");
+    // makeStar.setAttribute("alt", "Stars for the rating system");
+    if (seconds < 15) {
+        console.log("5 star")
+    } else if (seconds <= 25) {
+        document.getElementsByClassName("star")[0].style.display = "none";
+        console.log("down to 4 star")
+    } else if (seconds <= 35) {
+        document.getElementsByClassName("star")[1].style.display = "none";
+        console.log("down to 3 star")
+    } else if (seconds <= 45) {
+        document.getElementsByClassName("star")[2].style.display = "none";
+        console.log("down to 2 star")
+    } else if (seconds <= 50) {
+        document.getElementsByClassName("star")[3].style.display = "none";
+        console.log("down to 1 star")
+        // starRating.appendChild(makeStar);
+    } else {
+        console.log("staying on current star");
+        clearInterval(starCheck);
+    }
 }
 
 
@@ -133,7 +133,7 @@ function startTimer() {
 function showCard(event) {
     // feedback.innerHTML = "";
     if (timerCheck === 0) {
-    	randomiseSquares()
+        randomiseSquares()
         clearInterval(Interval);
         Interval = setInterval(startTimer, 10);
         console.log("Starting timer")
@@ -154,8 +154,6 @@ function showCard(event) {
         console.log("You can not double click image");
     }
     previousClickedEvent = clickTarget;
-
-
 
 
     winCheck();
@@ -180,9 +178,9 @@ function imageShower(imageClicked) {
     } else if (imageClicked == "g") {
         clickTarget.target.src = "img/icons/seven.png";
     } else if (imageClicked == "h") {
-    	clickTarget.target.src = "img/icons/eight.png";
+        clickTarget.target.src = "img/icons/eight.png";
     } else console.log("Issue with imageShower function")
-    
+
 }
 
 
@@ -202,8 +200,10 @@ function compareImage() {
 
 //Function runs when a user clicks 2 wrong cards
 function userMistake() {
-    thing = previousClickedEvent; //this is for the delayed flip funtion to run
-    setTimeout(turnReset, 800);
+    thing = previousClickedEvent; //this is for the delayed turnReset funtion to run
+    //TODO make the time out work at the minute if the user clicks too fast they can cause a third card to be flipped.
+    setTimeout(turnReset, 300);
+    // turnReset();
     clearClicked();
     removeLastFlipped();
     addPoint();
@@ -242,11 +242,11 @@ function removeLastFlipped() {
 
 //LOOP THAT FLIPS ALL CARDS BACK OVER TO RESET GAME
 function gameReset() {
-    for (let i = 15 ; i >= 0; i--) {
+    for (let i = 15; i >= 0; i--) {
         document.getElementsByClassName("square")[i].src = "img/square.png";
     }
-    for (let i = 3 ; i >= 0 ; i--) {
-    	document.getElementsByClassName("star")[i].style.display = "";
+    for (let i = 3; i >= 0; i--) {
+        document.getElementsByClassName("star")[i].style.display = "";
     }
 
     score = 0;
@@ -256,20 +256,16 @@ function gameReset() {
 }
 
 
+//THIS FUNCTION SETS A RANDOM LETTER DATASET OF BETWEEN A-H FOR THE RANDOMISING
 function randomiseSquares() {
-	const imageDataSet = "abcdefghabcdefgh";
-	let possible = imageDataSet
-	for (i = 15 ; i >= 0 ; i--) {
-		let choosenLetter = possible.charAt(Math.floor(Math.random() * possible.length))
-		// console.log(choosenLetter)
-		possible = possible.replace((choosenLetter), (""))
-		console.log(possible)
-		document.getElementsByClassName("square")[i].dataset.imagetype = "" + choosenLetter;
-		console.log(document.getElementsByClassName("square")[i].dataset.imagetype);
-	}
-
-
-	
+    const imageDataSet = "abcdefghabcdefgh";
+    let possible = imageDataSet
+    for (i = 15; i >= 0; i--) {
+        let choosenLetter = possible.charAt(Math.floor(Math.random() * possible.length))
+        // console.log(choosenLetter)
+        possible = possible.replace((choosenLetter), (""))
+        document.getElementsByClassName("square")[i].dataset.imagetype = "" + choosenLetter;
+    }
 }
 
 
@@ -280,10 +276,8 @@ function winCheck() {
         console.log("WINNER");
         timerStop();
         //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
-        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens;
+        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. And only " + score + " moves";
         $('#winnerModal').modal();
         clearInterval(starCheck);
     }
 }
-
-
