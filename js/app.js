@@ -4,6 +4,8 @@ const trackScore = document.getElementById("userScore");
 const feedback = document.getElementById("userFeedback");
 const winnerModal = document.getElementById("winner-text");
 
+let isClickable = true;
+
 eachRow.addEventListener('click', showCard);
 let previousClicked = undefined;
 let imageClicked = undefined;
@@ -62,13 +64,13 @@ function rating() {
     } else if (seconds <= 25) {
         document.getElementsByClassName("star")[0].style.display = "none";
         console.log("down to 4 star")
-    } else if (seconds <= 35) {
+    } else if (seconds <= 45) {
         document.getElementsByClassName("star")[1].style.display = "none";
         console.log("down to 3 star")
-    } else if (seconds <= 45) {
+    } else if (seconds <= 60) {
         document.getElementsByClassName("star")[2].style.display = "none";
         console.log("down to 2 star")
-    } else if (seconds <= 50) {
+    } else if (seconds <= 70) {
         document.getElementsByClassName("star")[3].style.display = "none";
         console.log("down to 1 star")
         // starRating.appendChild(makeStar);
@@ -132,31 +134,35 @@ function startTimer() {
 
 function showCard(event) {
     // feedback.innerHTML = "";
-    if (timerCheck === 0) {
-        randomiseSquares()
-        clearInterval(Interval);
-        Interval = setInterval(startTimer, 10);
-        console.log("Starting timer")
-        timerCheck++
-        starCheck = setInterval(rating, 4500);
+    if (isClickable === true) {
+		
+		if (timerCheck === 0) {
+	    randomiseSquares()
+	    clearInterval(Interval);
+	    Interval = setInterval(startTimer, 10);
+	    console.log("Starting timer")
+	    timerCheck++
+	    starCheck = setInterval(rating, 4500);
+	    }
+
+	    clickTarget = event;
+	    clickedImage = clickTarget.target.src;
+	    theImage = clickedImage.endsWith("square.png");
+	    imageClicked = clickTarget.target.dataset.imagetype;
+
+	    if (theImage === true) {
+	        imageShower(imageClicked);
+	        flippedCards.push(event);
+	        compareImage();
+	    } else {
+	        console.log("You can not double click image");
+	    }
+	    previousClickedEvent = clickTarget;
+
+
+	    winCheck();	
     }
-
-    clickTarget = event;
-    clickedImage = clickTarget.target.src;
-    theImage = clickedImage.endsWith("square.png");
-    imageClicked = clickTarget.target.dataset.imagetype;
-
-    if (theImage === true) {
-        imageShower(imageClicked);
-        flippedCards.push(event);
-        compareImage();
-    } else {
-        console.log("You can not double click image");
-    }
-    previousClickedEvent = clickTarget;
-
-
-    winCheck();
+    
 }
 
 
@@ -202,7 +208,8 @@ function compareImage() {
 function userMistake() {
     thing = previousClickedEvent; //this is for the delayed turnReset funtion to run
     //TODO make the time out work at the minute if the user clicks too fast they can cause a third card to be flipped.
-    setTimeout(turnReset, 300);
+    isClickable = false;
+    setTimeout(turnReset, 800);
     // turnReset();
     clearClicked();
     removeLastFlipped();
@@ -221,6 +228,7 @@ function addPoint() {
 function turnReset() {
     clickTarget.target.src = "img/square.png";
     thing.target.src = "img/square.png";
+    isClickable = true;
     // feedback.innerHTML = "";
 
 }
@@ -242,11 +250,18 @@ function removeLastFlipped() {
 
 //LOOP THAT FLIPS ALL CARDS BACK OVER TO RESET GAME
 function gameReset() {
+    //below loop flipps all the cards back over
     for (let i = 15; i >= 0; i--) {
         document.getElementsByClassName("square")[i].src = "img/square.png";
     }
+    //makes the stars visible again
     for (let i = 3; i >= 0; i--) {
         document.getElementsByClassName("star")[i].style.display = "";
+    }
+
+    let flippedArray = flippedCards.length - 1;
+    for (i = flippedArray ; i >= 0 ; i--) {
+    	flippedCards[i].pop();
     }
 
     score = 0;
@@ -276,7 +291,7 @@ function winCheck() {
         console.log("WINNER");
         timerStop();
         //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
-        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. And only " + score + " moves";
+        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. And only " + score + " moves!";
         $('#winnerModal').modal();
         clearInterval(starCheck);
     }

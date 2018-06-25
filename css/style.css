@@ -118,6 +118,9 @@ h1 {
     width: 100%;
 }
 
+#rating-section {
+    text-align: center;
+}
 
 /*Button for the reset of the game*/
 
