@@ -9,7 +9,7 @@ let isClickable = true;
 eachRow.addEventListener('click', showCard);
 let previousClicked = undefined;
 let imageClicked = undefined;
-let score = 0
+let score = 0;
 let theImage;
 let clickTarget;
 let previousClickedEvent;
@@ -60,19 +60,19 @@ function rating() {
     // makeStar.setAttribute("src", "img/star.png");
     // makeStar.setAttribute("alt", "Stars for the rating system");
     if (seconds < 15) {
-        console.log("5 star")
+        console.log("5 star");
     } else if (seconds <= 25) {
         document.getElementsByClassName("star")[0].style.display = "none";
-        console.log("down to 4 star")
+        console.log("down to 4 star");
     } else if (seconds <= 45) {
         document.getElementsByClassName("star")[1].style.display = "none";
-        console.log("down to 3 star")
+        console.log("down to 3 star");
     } else if (seconds <= 60) {
         document.getElementsByClassName("star")[2].style.display = "none";
-        console.log("down to 2 star")
+        console.log("down to 2 star");
     } else if (seconds <= 70) {
         document.getElementsByClassName("star")[3].style.display = "none";
-        console.log("down to 1 star")
+        console.log("down to 1 star");
         // starRating.appendChild(makeStar);
     } else {
         console.log("staying on current star");
@@ -85,13 +85,13 @@ function rating() {
 
 let seconds = 00;
 let tens = 00;
-const appendTens = document.getElementById("tens")
-const appendSeconds = document.getElementById("seconds")
+const appendTens = document.getElementById("tens");
+const appendSeconds = document.getElementById("seconds");
 const buttonStart = document.getElementById('button-start');
 const buttonStop = document.getElementById('button-stop');
 const buttonReset = document.getElementById('button-reset');
 let Interval;
-let timerCheck = 0
+let timerCheck = 0;
 
 function timerStop() {
     clearInterval(Interval);
@@ -108,6 +108,7 @@ function timerReset() {
 
 
 function startTimer() {
+    // padStart() method would clean this up a lot
     tens++;
     if (tens < 9) {
         appendTens.innerHTML = "0" + tens;
@@ -134,35 +135,35 @@ function startTimer() {
 
 function showCard(event) {
     // feedback.innerHTML = "";
-    if (isClickable === true) {
-		
-		if (timerCheck === 0) {
-	    randomiseSquares()
-	    clearInterval(Interval);
-	    Interval = setInterval(startTimer, 10);
-	    console.log("Starting timer")
-	    timerCheck++
-	    starCheck = setInterval(rating, 4500);
-	    }
+    if (isClickable) {
+        //if timer can get rid 
+        if (timerCheck === 0) {
+            randomiseSquares();
+            clearInterval(Interval);
+            Interval = setInterval(startTimer, 10);
+            console.log("Starting timer");
+            timerCheck++;
+            starCheck = setInterval(rating, 4500);
+        }
 
-	    clickTarget = event;
-	    clickedImage = clickTarget.target.src;
-	    theImage = clickedImage.endsWith("square.png");
-	    imageClicked = clickTarget.target.dataset.imagetype;
+        clickTarget = event;
+        clickedImage = clickTarget.target.src;
+        theImage = clickedImage.endsWith("square.png");
+        imageClicked = clickTarget.target.dataset.imagetype;
 
-	    if (theImage === true) {
-	        imageShower(imageClicked);
-	        flippedCards.push(event);
-	        compareImage();
-	    } else {
-	        console.log("You can not double click image");
-	    }
-	    previousClickedEvent = clickTarget;
+        if (theImage === true) {
+            imageShower(imageClicked);
+            flippedCards.push(event);
+            compareImage();
+        } else {
+            console.log("You can not double click image");
+        }
+        previousClickedEvent = clickTarget;
 
 
-	    winCheck();	
+        winCheck();
     }
-    
+
 }
 
 
@@ -260,8 +261,8 @@ function gameReset() {
     }
 
     let flippedArray = flippedCards.length - 1;
-    for (i = flippedArray ; i >= 0 ; i--) {
-    	flippedCards[i].pop();
+    for (i = flippedArray; i >= 0; i--) {
+        flippedCards.pop();
     }
 
     score = 0;
