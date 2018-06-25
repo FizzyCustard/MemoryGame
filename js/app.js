@@ -5,10 +5,11 @@ const feedback = document.getElementById("userFeedback");
 const winnerModal = document.getElementById("winner-text");
 
 let isClickable = true;
+randomiseSquares(); //this on load randoimses the cards in the game
 
 eachRow.addEventListener('click', showCard);
-let previousClicked = undefined;
-let imageClicked = undefined;
+let previousClicked;
+let imageClicked;
 let score = 0;
 let theImage;
 let clickTarget;
@@ -138,7 +139,6 @@ function showCard(event) {
     if (isClickable) {
         //if timer can get rid 
         if (timerCheck === 0) {
-            randomiseSquares();
             clearInterval(Interval);
             Interval = setInterval(startTimer, 10);
             console.log("Starting timer");
@@ -269,6 +269,7 @@ function gameReset() {
     trackScore.innerHTML = score;
     timerReset();
     clearInterval(starCheck);
+    randomiseSquares();
 }
 
 
