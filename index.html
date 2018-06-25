@@ -7,6 +7,7 @@
     <title>My Memory Game</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="${2}">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-    <h1>My Memory Game</h1>
+    <div class="title"> My Memory Game </div>
 
   <!-- Modal -->
   <div class="modal fade" id="winnerModal" role="dialog">
@@ -55,8 +56,8 @@
     </div>
     
     <div class="wrapper">
-        <h3>Stopwatch</h3>
-        <p id="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
+        <h3>Stopwatch:</h3> 
+        <h3 id="timer"><span id="seconds">00</span>:<span id="tens">00</span></h3>
     </div>
     <div class="theGap"></div>
     <div id="table-square">

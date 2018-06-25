@@ -3,13 +3,13 @@ const trackScore = document.getElementById("userScore");
 const winnerModal = document.getElementById("winner-text");
 
 let isClickable = true;
-randomiseSquares(); //this on load randoimses the cards in the game
+randomiseSquares(); //this on load randoimses the cards in the game so it is ready to play straight away
 
 eachRow.addEventListener('click', showCard);
-let previousClicked;
-let imageClicked;
-let score = 0;
-let clickTarget;
+let previousClicked; //this stores the previous mouse click event so that a comparison can be made to the next click
+let imageClicked; // this is the mouse event for the mouse event that just happened which can be compared with previousClicked
+let score = 0; //counts the score of the user 1 point per pair turned over
+let clickTarget; //Global varaible that us used in multiple functions to store the click target
 let previousClickedEvent;
 let flippedCards = [];
 let thing;
@@ -51,8 +51,6 @@ let thing;
 let starCheck;
 let starCounter = 5;
 function rating() {
-
-    
 
     if (score === 20) {
         document.getElementsByClassName("star")[0].style.display = "none";
@@ -144,7 +142,6 @@ function showCard(event) {
             flippedCards.push(event);
             compareImage();
         }
-        previousClickedEvent = clickTarget;
 
         winCheck();
     }
@@ -180,6 +177,8 @@ function imageShower(imageClicked) {
 // compares it to the one just clicked to see if they match
 
 function compareImage() {
+    previousClickedEvent = clickTarget;
+
     if (previousClicked == undefined) {
         previousClicked = imageClicked;
     } else if (previousClicked == imageClicked) {
@@ -192,11 +191,9 @@ function compareImage() {
 
 //Function runs when a user clicks 2 wrong cards
 function userMistake() {
-    thing = previousClickedEvent; //this is for the delayed turnReset funtion to run
-    //TODO make the time out work at the minute if the user clicks too fast they can cause a third card to be flipped.
+    // thing = previousClickedEvent; //this is for the delayed turnReset funtion to run
     isClickable = false;
     setTimeout(turnReset, 800);
-    // turnReset();
     clearClicked();
     removeLastFlipped();
     addPoint();
@@ -214,10 +211,8 @@ function addPoint() {
 //MAKES A PREVIOUS CLICKED AND CURRENT CLICKED CARDS TURN BACK OVER
 function turnReset() {
     clickTarget.target.src = "img/square.png";
-    thing.target.src = "img/square.png";
+    previousClickedEvent.target.src = "img/square.png";
     isClickable = true;
-    // feedback.innerHTML = "";
-
 }
 
 

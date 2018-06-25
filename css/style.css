@@ -5,74 +5,13 @@ body {
     background: #ffffff url('../img/geometry2.png');
 }
 
-h1 {
+.title {
     text-align: center;
+    font-family: 'Encode Sans Condensed';
+    font-size: 50px;
+
 }
 
-
-
-/*SLIDER CSS BELOW*/
-
-
-/* The slider itself */
-
-.slidecontainer {
-    width: 602px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-
-/*.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
-    border: 0;
-    background: url("../img/troll.png");
-    cursor: pointer;
-}*/
-
-
-/*.slider::-moz-range-thumb {
-    width: 23px;
-    height: 24px;
-    border: 0;
-    background: url("../img/oval.png");
-    cursor: pointer;
-}*/
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 25px;
-    width: 25px;
-    background-color: #555;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-
-
-/*SLIDER CODE ENDS*/
 
 /*TODO styling for the winner modal*/
 #winner-text {
@@ -80,13 +19,21 @@ h1 {
 }
 
 #timer {
-    font-size: 27px;
+    font-size: 24px;
+
 }
 
 .theGap {
     margin-bottom: 20px;
 }
 
+.wrapper {
+    display: flex; 
+    font-family: Raleway;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+}
 
 #table-square {
     width: 617px;
@@ -119,6 +66,7 @@ h1 {
     font-size: 25px;
     text-align: center;
     width: 100%;
+    font-family: Raleway;
 }
 
 #rating-section {
@@ -132,3 +80,73 @@ h1 {
     border: 2px;
     font-size: 16px;
 }
+
+
+
+
+
+
+
+
+/*SLIDER CSS BELOW*/
+
+
+/* The slider itself */
+
+/*.slidecontainer {
+    width: 602px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+*/
+
+/*.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: url("../img/troll.png");
+    cursor: pointer;
+}*/
+
+
+/*.slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("../img/oval.png");
+    cursor: pointer;
+}*/
+
+/*.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}*/
+
+
+
+/*SLIDER CODE ENDS*/
