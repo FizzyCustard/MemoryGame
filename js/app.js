@@ -1,6 +1,5 @@
 const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
-const winnerModal = document.getElementById("winner-text");
 
 
 let previousClicked; //this stores the previous mouse click event so that a comparison can be made to the next click
@@ -38,13 +37,13 @@ function rating() {
 
 //code for the timer below
 
-let seconds = 00;
-let tens = 00;
-const appendTens = document.getElementById("tens");
-const appendSeconds = document.getElementById("seconds");
+let seconds = "00"; //seconds used in the timer
+let tens = "00"; //micro seconds of the timer
+const appendSeconds = document.getElementById("seconds"); //apending the html with the seconds seconds
+const appendTens = document.getElementById("tens"); //apending the html with the micro seconds
 
 let Interval;
-let timerCheck = 0;
+let timerCheck = true; //this is used in the show card function and stores if the timer is running.
 
 function timerStop() {
     clearInterval(Interval);
@@ -56,7 +55,7 @@ function timerReset() {
     seconds = "00";
     appendTens.innerHTML = tens;
     appendSeconds.innerHTML = seconds;
-    timerCheck = 0;
+    timerCheck = true;
 }
 
 
@@ -91,11 +90,10 @@ function showCard(event) {
     //First i check to see if the gaming area is clickable this stops the user clicking more than twice which can cause issues.
     if (isClickable) {
         //If the timer isnt running this means the games hasnt started so we start the timer and get the game going
-        if (timerCheck === 0) {
+        if (timerCheck) {
             clearInterval(Interval);
             Interval = setInterval(startTimer, 10);
-            console.log("Starting timer");
-            timerCheck++;
+            timerCheck = false;
         }
 
         clickTarget = event;
@@ -148,7 +146,7 @@ function compareImage() {
         addPoint();
     } else if (previousClicked != imageClicked) {
         userMistake();
-    } else console.log("ERROR");
+    } else console.error("with compareImage function");
 
 }
 
@@ -207,7 +205,7 @@ function gameReset() {
     }
     //removes all items from the flippedCards array
     let flippedArray = flippedCards.length - 1;
-    for (i = flippedArray; i >= 0; i--) {
+    for (let i = flippedArray; i >= 0; i--) {
         flippedCards.pop();
     }
 
@@ -222,7 +220,7 @@ function gameReset() {
 function randomiseSquares() {
     const imageDataSet = "abcdefghabcdefgh"; //there are 16 cards so we need 8 pairs hence a-h
     let possible = imageDataSet
-    for (i = 15; i >= 0; i--) {
+    for (let i = 15; i >= 0; i--) {
         let choosenLetter = possible.charAt(Math.floor(Math.random() * possible.length));
         possible = possible.replace((choosenLetter), ("")); //removes the letter that was used out of the possible string so that they dont get pulled multiple times
         document.getElementsByClassName("square")[i].dataset.imagetype = "" + choosenLetter; //assigns the dataset imagetype property to each tile.
@@ -237,7 +235,43 @@ function winCheck() {
     if (flippedCards.length >= 16) {
         timerStop();
         //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
-        winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. With a " + starCounter + " star rating!";
-        $('#winnerModal').modal(); //need to change this to be done in css so i dont have to use jQuery
+        winnerModal();
     }
 }
+
+
+
+
+
+
+// When the user clicks on the button, open the modal 
+// btn.onclick = 
+const modal = document.getElementById("myModal");
+const modalX = document.getElementById("close");
+
+
+modalX.addEventListener('click', closeModal); // When the user clicks on <span> (x), close the modal
+
+function winnerModal() {
+    // Get the modal
+    let modal = document.getElementById('myModal');
+    let modalContent = document.getElementById("modal-info");
+    modal.style.display = "block";
+    modalContent.innerHTML = "Great work you won!!! In a time of " + seconds + "." + tens + " seconds. With a " + starCounter + " star rating!";
+
+}
+
+function closeModal() {
+    //TODO make this function work so that when you click outside of the pop up you can close the modal
+    // if (event.target == modal) {
+    //     modal.style.display = "none"; 
+    // } else 
+    modal.style.display = "none"; // When the user clicks on <span> (x), close the modal
+}
+
+
+
+
+
+
+
