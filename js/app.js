@@ -2,10 +2,7 @@ const eachRow = document.getElementById("table-square");
 const trackScore = document.getElementById("userScore");
 const winnerModal = document.getElementById("winner-text");
 
-let isClickable = true;
-randomiseSquares(); //this on load randoimses the cards in the game so it is ready to play straight away
 
-eachRow.addEventListener('click', showCard);
 let previousClicked; //this stores the previous mouse click event so that a comparison can be made to the next click
 let imageClicked; // this is the mouse event for the mouse event that just happened which can be compared with previousClicked
 let score = 0; //counts the score of the user 1 point per pair turned over
@@ -14,41 +11,12 @@ let previousClickedEvent;
 let flippedCards = [];
 let thing;
 
-// CODE FOR THE SLIDER
+let isClickable = true;
+randomiseSquares(); //this on load randoimses the cards in the game so it is ready to play straight away
 
-// let slider = document.getElementById("myRange");
-// let output = document.getElementById("demo");
-// slider.innerHTML = slider.value; // Display the default slider value
+eachRow.addEventListener('click', showCard);
 
-// // Update the current slider value (each time you drag the slider handle)
-// slider.oninput = function() {
-//     slider.innerHTML = this.value;
-//     theValue = this.value
-//     if (theValue == 1) {
-//         let i;
-//         for (i = 0; i < eachCube.length; i++) {
-//             eachCube[i].style.backgroundColor = "#ffffff";
-//         }
-//     } else if (theValue == 2) {
-//         for (i = 0; i < eachCube.length; i++) {
-//             eachCube[i].style.backgroundColor = "#DCDC1A";
-//         }
-//     } else if (theValue == 3) {
-//         for (i = 0; i < eachCube.length; i++) {
-//             eachCube[i].style.backgroundColor = "#32D333";
-//         }
-//     } else {
-//         for (i = 0; i < eachCube.length; i++) {
-//             eachCube[i].style.backgroundColor = "#300B39";
-//         }
-//     }
-// }
 
-//END OF SLIDER CODE
-
-// CODE FOR THE RATING SYSTEM
-
-let starCheck;
 let starCounter = 5;
 function rating() {
 
@@ -68,16 +36,13 @@ function rating() {
 }
 
 
-//code for the timer
+//code for the timer below
 
 let seconds = 00;
 let tens = 00;
 const appendTens = document.getElementById("tens");
 const appendSeconds = document.getElementById("seconds");
-//TODO remove 3 consts below
-// const buttonStart = document.getElementById('button-start');
-// const buttonStop = document.getElementById('button-stop');
-// const buttonReset = document.getElementById('button-reset');
+
 let Interval;
 let timerCheck = 0;
 
@@ -96,7 +61,7 @@ function timerReset() {
 
 
 function startTimer() {
-    // padStart() method would clean this up a lot
+    // TODO: padStart() method would clean this up a lot need to investigate 
     tens++;
     if (tens < 9) {
         appendTens.innerHTML = "0" + tens;
@@ -118,13 +83,14 @@ function startTimer() {
 
 }
 
-
 //TIMER CODE END
 
+
+//This is the fuyntion that runs when the user clicks on a given tile
 function showCard(event) {
-    // feedback.innerHTML = "";
+    //First i check to see if the gaming area is clickable this stops the user clicking more than twice which can cause issues.
     if (isClickable) {
-        //if timer can get rid 
+        //If the timer isnt running this means the games hasnt started so we start the timer and get the game going
         if (timerCheck === 0) {
             clearInterval(Interval);
             Interval = setInterval(startTimer, 10);
@@ -133,24 +99,25 @@ function showCard(event) {
         }
 
         clickTarget = event;
-        const clickedImage = clickTarget.target.src;
-        const theImage = clickedImage.endsWith("square.png");
-        imageClicked = clickTarget.target.dataset.imagetype;
+        const clickedImage = clickTarget.target.src; //this is to help with the comparing of what the user clicked on
+        const theImage = clickedImage.endsWith("square.png"); //This is used for knowing if the users card needs turning over or not
+        imageClicked = clickTarget.target.dataset.imagetype; //This is how pairs of cards are compared using the dataset.imagetype property 
 
         if (theImage) {
             imageShower(imageClicked);
-            flippedCards.push(event);
+            flippedCards.push(event); //correct pairs are stored in an array
             compareImage();
         }
 
-        winCheck();
+        winCheck(); //has the user won yet basiclly waiting for the array to hit 16 and above.
+        previousClickedEvent = clickTarget; //final thing in the function is to store the clicked event to this variable so that a comparision can be made
     }
 
 }
 
 
 // This function below takes 2 arguments from the showCard function and then shows and hides the image that are clicked on.
-
+//each image tile is assigend a letter a-h by the randomiseSquares funtion this is then used here to compare and check what the user has clicked on
 function imageShower(imageClicked) {
     if (imageClicked == "a") {
         clickTarget.target.src = "img/icons/one.png";
@@ -172,13 +139,9 @@ function imageShower(imageClicked) {
 
 }
 
-
-// This function compares the previously clicked image and 
-// compares it to the one just clicked to see if they match
-
+// This function compares the previously clicked image and compares it to the one just clicked to see if they match
+//if the images match then the user gains a point using the addPoint function. If they make a mistake then the user mistake funtion is called.
 function compareImage() {
-    previousClickedEvent = clickTarget;
-
     if (previousClicked == undefined) {
         previousClicked = imageClicked;
     } else if (previousClicked == imageClicked) {
@@ -189,13 +152,14 @@ function compareImage() {
 
 }
 
-//Function runs when a user clicks 2 wrong cards
+//Function runs when a user clicks 2 wrong cards flips them back over and then pops the last 2 events out of the flipped cards array.
 function userMistake() {
-    // thing = previousClickedEvent; //this is for the delayed turnReset funtion to run
+    //TODO: need to change the name of the varialbbe thing as not very discriptive. 
+    thing = previousClickedEvent; //this is for the delayed turnReset funtion to run and flip the incorrect images over
     isClickable = false;
     setTimeout(turnReset, 800);
-    clearClicked();
-    removeLastFlipped();
+    clearClicked(); //setts previous and imageclicked back to undefined
+    removeLastFlipped(); //pops 2 events out of flipped cards array
     addPoint();
 }
 
@@ -211,7 +175,7 @@ function addPoint() {
 //MAKES A PREVIOUS CLICKED AND CURRENT CLICKED CARDS TURN BACK OVER
 function turnReset() {
     clickTarget.target.src = "img/square.png";
-    previousClickedEvent.target.src = "img/square.png";
+    thing.target.src = "img/square.png";
     isClickable = true;
 }
 
@@ -241,29 +205,27 @@ function gameReset() {
     for (let i = 3; i >= 0; i--) {
         document.getElementsByClassName("star")[i].style.display = "";
     }
-
+    //removes all items from the flippedCards array
     let flippedArray = flippedCards.length - 1;
     for (i = flippedArray; i >= 0; i--) {
         flippedCards.pop();
     }
 
-    score = 0;
-    trackScore.innerHTML = score;
+    score = 0; //sets score back to zero
+    trackScore.innerHTML = score; //adds the score back into the html
     timerReset();
-    clearInterval(starCheck);
     randomiseSquares();
 }
 
 
 //THIS FUNCTION SETS A RANDOM LETTER DATASET OF BETWEEN A-H FOR THE RANDOMISING
 function randomiseSquares() {
-    const imageDataSet = "abcdefghabcdefgh";
+    const imageDataSet = "abcdefghabcdefgh"; //there are 16 cards so we need 8 pairs hence a-h
     let possible = imageDataSet
     for (i = 15; i >= 0; i--) {
-        let choosenLetter = possible.charAt(Math.floor(Math.random() * possible.length))
-        // console.log(choosenLetter)
-        possible = possible.replace((choosenLetter), (""))
-        document.getElementsByClassName("square")[i].dataset.imagetype = "" + choosenLetter;
+        let choosenLetter = possible.charAt(Math.floor(Math.random() * possible.length));
+        possible = possible.replace((choosenLetter), ("")); //removes the letter that was used out of the possible string so that they dont get pulled multiple times
+        document.getElementsByClassName("square")[i].dataset.imagetype = "" + choosenLetter; //assigns the dataset imagetype property to each tile.
     }
 }
 
@@ -271,12 +233,11 @@ function randomiseSquares() {
 
 //FUNCTION THAT CHECKS IS THE USER HAS WON
 function winCheck() {
-    if (flippedCards.length == 16) {
-        console.log("WINNER");
+    //here we look for the flippedCards array to equal 16 and above that lets us know that the game is over and the user has won.
+    if (flippedCards.length >= 16) {
         timerStop();
         //TODO: need to fix this little hack becuase my image flip is asynchronous which is causing some issues 
         winnerModal.innerHTML = "  Great work you won!!! In a time of " + seconds + "." + tens + " seconds. With a " + starCounter + " star rating!";
-        $('#winnerModal').modal();
-        clearInterval(starCheck);
+        $('#winnerModal').modal(); //need to change this to be done in css so i dont have to use jQuery
     }
 }
