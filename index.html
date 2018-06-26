@@ -28,38 +28,37 @@
 
 
   <!-- Modal -->
-
     <!-- Trigger/Open The Modal -->
-    <!-- TODO remove the button which i am using for testing the modal -->
-    <button id="myBtn" onclick="winnerModal();">Open Modal</button>
+    <!-- <button id="myBtn" onclick="winnerModal();">Open Modal</button> -->
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
-
          <!-- Modal content -->
         <div class="modal-content">
             <span id="close">&times;</span>
             <p id="modal-info">Hello</p>
+            <input type="button" value="Play again?" id="play-again" onclick= "closeModal();">
         </div>
-
+    </div>
+    <div id="points-timer">
+        <div id="rating-section">
+            <p class="score">Moves: <span id="userScore">0</span></p>
+        </div>
+        
+        <div class="wrapper">
+            <p class="score">Stopwatch: <span id="timer"><span id="seconds">00</span>:<span id="tens">00</span></span></p>  
+            
+        </div>
     </div>
 
-    <h2><span id= "userFeedback"></span></h2>
-    <p class="score">Moves: <span id="userScore">0</span></p>
-    <div id="rating-section">
-    	<div id="star-rating">
-    			<img src="img/star.png" id="star1" class = "star">
-		    	<img src="img/star.png" id="star2" class = "star">
-		    	<img src="img/star.png" id="star3" class = "star">
-		    	<img src="img/star.png" id="star4" class = "star">
-		    	<img src="img/star.png" id="star5" class = "star">
-    	</div>
-    </div>
-    
-    <div class="wrapper">
-        <h3>Stopwatch:</h3> 
-        <h3 id="timer"><span id="seconds">00</span>:<span id="tens">00</span></h3>
-    </div>
+    <div id="star-rating">
+        <img src="img/star.png" id="star1" class = "star">
+        <img src="img/star.png" id="star2" class = "star">
+        <img src="img/star.png" id="star3" class = "star">
+        <img src="img/star.png" id="star4" class = "star">
+        <img src="img/star.png" id="star5" class = "star">
+    </div> 
+
     <div class="theGap"></div>
     <div id="table-square">
         <div id="row-one">

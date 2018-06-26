@@ -240,14 +240,10 @@ function winCheck() {
 }
 
 
-
-
-
-
 // When the user clicks on the button, open the modal 
 // btn.onclick = 
 const modal = document.getElementById("myModal");
-const modalX = document.getElementById("close");
+const modalX = document.getElementById("close"); //for the cross to close the modal pop up
 
 
 modalX.addEventListener('click', closeModal); // When the user clicks on <span> (x), close the modal
@@ -267,11 +263,5 @@ function closeModal() {
     //     modal.style.display = "none"; 
     // } else 
     modal.style.display = "none"; // When the user clicks on <span> (x), close the modal
+    gameReset();
 }
-
-
-
-
-
-
-
