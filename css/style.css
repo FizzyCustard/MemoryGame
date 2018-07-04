@@ -1,5 +1,5 @@
 /*TODO MAKE THE IMAGES A DRAWN SQUARE*/
-
+/*TODO make the page fit on mobile screens*/
 
 body {
     background: #ffffff url('../img/geometry2.png');
@@ -9,43 +9,10 @@ h3 {
     font-size: 24px;
 }
 
-.title {
-    text-align: center;
-    font-family: 'Encode Sans Condensed';
-    font-size: 50px;
-
-}
-
-
-/*TODO styling for the winner modal*/
-#winner-text {
-
-}
-
-#points-timer {
-    display: flex;
-    width: 100%;
-}
-
 #rating-section {
-    text-align: center;
-    width: 50%;
-}
-
-#timer {
-    font-size: 24px;
-    width: 50%;
-}
-
-.theGap {
-    margin-bottom: 20px;
-}
-
-.wrapper {
-    font-size: 24px;
-    width: 50%;
-
-}
+        text-align: center;
+        width: 50%;
+    }
 
 #star-rating {
     width: 220px;
@@ -53,89 +20,181 @@ h3 {
     margin-right: auto;
 }
 
-#table-square {
-    width: 617px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#row-one {
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.square-down {
-    /*background-color: grey;*/
-    background-color: #ffffff;
-    position: relative;
-    top: 0;
-    left: 0;
-    border-color: blue;
-}
-
-.slider {
-    width: 600px;
-}
 
 
+@media screen and (max-width: 640px) {
 
-.score {
-    font-size: 25px;
-    text-align: center;
-    width: 100%;
-    font-family: Raleway;
-}
+    p {
+        font-size: 15px;
+    }
 
+    .title {
+        text-align: center;
+        font-family: 'Encode Sans Condensed';
+        font-size: 28px;
+    }
 
+    #points-timer {
+        display: flex;
+        width: 100%;
+    }
 
-/*Button for the reset of the game*/
+    #timer {
+        font-size: 15px;
+        width: 50%;
+    }
 
-/*TODO need to sort styling and add a bit more space above to make the button stand out more*/
-#resetGame {
-    border: 2px;
-    font-size: 16px;
+    .square {
+        width: 100px;
+    }
+
+    #table-square {
+        margin-left: auto;
+        margin-right: auto;
+        width: 412px
+    }
+
 }
 
 
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+@media screen and (min-width: 641px) {
+
+    .title {
+        text-align: center;
+        font-family: 'Encode Sans Condensed';
+        font-size: 50px;
+
+    }
+
+
+    /*TODO styling for the winner modal*/
+    #winner-text {
+
+    }
+
+    #points-timer {
+        display: flex;
+        width: 100%;
+    }
+
+    
+
+    #timer {
+        font-size: 24px;
+        width: 50%;
+    }
+
+    .theGap {
+        margin-bottom: 20px;
+    }
+
+    .wrapper {
+        font-size: 24px;
+        width: 50%;
+
+    }
+
+
+
+    #table-square {
+        width: 617px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #row-one {
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .square-down {
+        /*background-color: grey;*/
+        background-color: #ffffff;
+        position: relative;
+        top: 0;
+        left: 0;
+        border-color: blue;
+    }
+
+    .slider {
+        width: 600px;
+    }
+
+
+
+    .score {
+        font-size: 25px;
+        text-align: center;
+        width: 100%;
+        font-family: Raleway;
+    }
+
 }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
+/*END OF THE RESPONSIVE CSS*/
 
-/* The Close Button */
-#close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
 
-#close:hover,
-#close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    #close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    #close:hover,
+    #close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+     /*Button for the reset of the game*/
+
+     #resetContainer {
+            width: 100%;
+    }
+    /*TODO need to sort styling and add a bit more space above to make the button stand out more*/
+    #resetGame {
+        border: 2px;
+        font-size: 16px;
+        display: flex;
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #FB1D1DFF;
+        color: white;
+        padding-left: 15px;
+    }
+
+
 
 
 

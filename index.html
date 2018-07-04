@@ -57,7 +57,7 @@
 
     <div class="theGap"></div>
     <div id="table-square">
-        <div id="row-one">
+        <div class="row-one">
             <!-- THE data-imageType IS THERE FOR THE RANDOMISING FUNCTION TO WORK -->
             <img src="img/square.png" class= "square" data-imageType="">
             <img src="img/square.png" class= "square" data-imageType="">
@@ -83,7 +83,11 @@
             <img src="img/square.png" class= "square" data-imageType="">
         </div>
     </div>
-    <input type="button" value="Reset" id="resetGame" onclick="gameReset();">
+    <div id="resetContainer">
+        <input type="button" value="Reset" id="resetGame" onclick="gameReset();">
+    </div>
+
+    
     <script src="js/app.js"></script>
 </body>
 
