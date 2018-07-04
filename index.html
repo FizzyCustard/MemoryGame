@@ -21,73 +21,63 @@
 
 <body>
     <div class="title"> My Memory Game </div>
-
-
-  <!-- Modal -->
-    <!-- Trigger/Open The Modal -->
-    <!-- <button id="myBtn" onclick="winnerModal();">Open Modal</button> -->
-
     <!-- The Modal -->
     <div id="myModal" class="modal">
-         <!-- Modal content -->
+        <!-- Modal content -->
         <div class="modal-content">
             <span id="close">&times;</span>
             <p id="modal-info">Hello</p>
-            <input type="button" value="Play again?" id="play-again" onclick= "closeModal();">
+            <input type="button" value="Play again?" id="play-again" onclick="closeModal();">
         </div>
     </div>
     <div id="points-timer">
         <div id="rating-section">
             <p class="score">Moves: <span id="userScore">0</span></p>
         </div>
-        
         <div class="wrapper">
-            <p class="score">Stopwatch: <span id="timer"><span id="seconds">00</span>:<span id="tens">00</span></span></p>  
-            
+            <p class="score">Stopwatch: <span id="timer"><span id="seconds">00</span>:<span id="tens">00</span></span>
+            </p>
         </div>
     </div>
-
     <div id="star-rating">
-        <img src="img/star.png" id="star1" class = "star">
-        <img src="img/star.png" id="star2" class = "star">
-        <img src="img/star.png" id="star3" class = "star">
-        <img src="img/star.png" id="star4" class = "star">
-        <img src="img/star.png" id="star5" class = "star">
-    </div> 
-
+        <img src="img/star.png" id="star1" class="star">
+        <img src="img/star.png" id="star2" class="star">
+        <img src="img/star.png" id="star3" class="star">
+        <img src="img/star.png" id="star4" class="star">
+        <img src="img/star.png" id="star5" class="star">
+    </div>
     <div class="theGap"></div>
     <div id="table-square">
         <div class="row-one">
             <!-- THE data-imageType IS THERE FOR THE RANDOMISING FUNCTION TO WORK -->
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
         </div>
         <div class="row-two">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
         </div>
         <div class="row-three">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
         </div>
         <div class="row-three">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
-            <img src="img/square.png" class= "square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
+            <img src="img/square.png" class="square" data-imageType="">
         </div>
     </div>
     <div id="resetContainer">
-        <input type="button" value="Reset" id="resetGame" onclick="gameReset();">
+        <input type="button" value="Reset" id="resetGame" onclick="gameReset();" accesskey="r">
+        <!-- you can reset the game on the mac using alt + control + r which i did using the accesskey attribute -->
     </div>
-
-    
     <script src="js/app.js"></script>
 </body>
 

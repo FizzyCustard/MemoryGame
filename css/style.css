@@ -1,5 +1,4 @@
-/*TODO MAKE THE IMAGES A DRAWN SQUARE*/
-/*TODO make the page fit on mobile screens*/
+/*TODO MAKE THE IMAGES A DRAWN SQUARE using css*/
 
 body {
     background: #ffffff url('../img/geometry2.png');
@@ -10,9 +9,9 @@ h3 {
 }
 
 #rating-section {
-        text-align: center;
-        width: 50%;
-    }
+    text-align: center;
+    width: 50%;
+}
 
 #star-rating {
     width: 220px;
@@ -52,7 +51,6 @@ h3 {
         margin-right: auto;
         width: 340px
     }
-
 }
 
 
@@ -88,7 +86,6 @@ h3 {
         margin-right: auto;
         width: 412px
     }
-
 }
 
 
@@ -100,21 +97,18 @@ h3 {
         text-align: center;
         font-family: 'Encode Sans Condensed';
         font-size: 50px;
-
     }
 
 
     /*TODO styling for the winner modal*/
-    #winner-text {
-
-    }
+    #winner-text {}
 
     #points-timer {
         display: flex;
         width: 100%;
     }
 
-    
+
 
     #timer {
         font-size: 24px;
@@ -128,7 +122,6 @@ h3 {
     .wrapper {
         font-size: 24px;
         width: 50%;
-
     }
 
 
@@ -170,73 +163,83 @@ h3 {
     .square {
         width: auto;
     }
-
-
-
 }
+
 
 /*END OF THE RESPONSIVE CSS*/
 
 
+/* The Modal (background) */
 
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button */
-    #close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    #close:hover,
-    #close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-     /*Button for the reset of the game*/
-
-     #resetContainer {
-            width: 100%;
-    }
-    /*TODO need to sort styling and add a bit more space above to make the button stand out more*/
-    #resetGame {
-        border: 2px;
-        font-size: 16px;
-        display: flex;
-        width: 70px;
-        margin-left: auto;
-        margin-right: auto;
-        background: #FB1D1DFF;
-        color: white;
-        padding-left: 15px;
-    }
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
 
 
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
 
 
+/* The Close Button */
+
+#close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
+/*Button for the reset of the game*/
+
+#resetContainer {
+    width: 100%;
+}
+
+
+/*TODO need to sort styling and add a bit more space above to make the button stand out more*/
+
+#resetGame {
+    border: 2px;
+    font-size: 16px;
+    display: flex;
+    width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FB1D1DFF;
+    color: white;
+    padding-left: 15px;
+}

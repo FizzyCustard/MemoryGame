@@ -17,18 +17,19 @@ eachRow.addEventListener('click', showCard);
 
 
 let starCounter = 5;
+
 function rating() {
 
-    if (score === 20) {
+    if (score === 15) {
         document.getElementsByClassName("star")[0].style.display = "none";
         starCounter--;
-    } else if (score === 25) {
+    } else if (score === 22) {
         document.getElementsByClassName("star")[1].style.display = "none";
         starCounter--;
-    } else if (score === 35) {
+    } else if (score === 26) {
         document.getElementsByClassName("star")[2].style.display = "none";
         starCounter--;
-    } else if (score === 40) {
+    } else if (score === 30) {
         document.getElementsByClassName("star")[3].style.display = "none";
         starCounter--;
     }
