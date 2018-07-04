@@ -21,8 +21,43 @@ h3 {
 }
 
 
+@media screen and (max-width: 450px) {
 
-@media screen and (max-width: 640px) {
+    p {
+        font-size: 15px;
+    }
+
+    .title {
+        text-align: center;
+        font-family: 'Encode Sans Condensed';
+        font-size: 28px;
+    }
+
+    #points-timer {
+        display: flex;
+        width: 100%;
+    }
+
+    #timer {
+        font-size: 15px;
+        width: 50%;
+    }
+
+    .square {
+        width: 80px;
+    }
+
+    #table-square {
+        margin-left: auto;
+        margin-right: auto;
+        width: 340px
+    }
+
+}
+
+
+
+@media screen and (min-width: 451px) {
 
     p {
         font-size: 15px;
@@ -131,6 +166,12 @@ h3 {
         width: 100%;
         font-family: Raleway;
     }
+
+    .square {
+        width: auto;
+    }
+
+
 
 }
 
